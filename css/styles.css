@@ -244,6 +244,10 @@ body .demo-blog {
 .demo-blog .shopping .mdl-card__media {
   background-image: url('../images/shopping.jpg');
 }
+
+.demo-blog .favyourself .mdl-card__media {
+  background-image: url('../images/fayourself-hero.jpg');
+}
 .demo-blog .demo-blog__posts > .demo-nav {
   margin: 12px 15px;
   display: -webkit-box;
