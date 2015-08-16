@@ -96,6 +96,7 @@ display: none;
 .cd-fixed-background p {
   line-height: 1.6;
   font-family: "Merriweather", serif;
+
 }
 .cd-fixed-background .light-background h2, .cd-fixed-background .light-background p {
   color: #0f594d;
@@ -126,8 +127,10 @@ display: none;
   background-color: #0f594d;
 }
 .cd-fixed-background.img-3 .cd-content::after {
-  background: url("../img/img-mobile-3.jpg") no-repeat;
+  /*
+    background: url("../img/img-mobile-3.jpg") no-repeat;
   background-size: 100% auto;
+    */
 }
 .cd-fixed-background.img-4 {
   background-color: #db9537;
@@ -174,7 +177,7 @@ display: none;
     background-image: url("../img/img-2-new.jpg");
   }
   .cd-fixed-background.img-3 {
-    background-image: url("../img/img-3.jpg");
+    background-image: url("../img/img-3-good.jpg");
   }
   .cd-fixed-background.img-4 {
     background-image: url("../img/img-4.jpg");

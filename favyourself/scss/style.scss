@@ -131,8 +131,10 @@ Main Components
 		background-color: $color-1;
 
 		.cd-content::after {
-			background: url('../img/img-mobile-3.jpg') no-repeat;
+            /*
+            background: url('../img/img-mobile-3.jpg') no-repeat;
 			background-size: 100% auto;
+            */
 		}
 	}
 
