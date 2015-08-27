@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Voice Rating</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Google Web Designer 1.3.2.0521">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script src="js/annyang.min.js"></script>
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/speech.js"></script>
+</head>
+
+<body>
+  <img src="assets/photo2.jpg" class="gwd-img-05lz gwd-img-rqof gwd-img-x5zt" id="background">
+  <div class="gwd-div-o2mb" id="question"> Hoeveel heb je van deze afbeelding? <br> Spreek een getal tussen 1 en 5.</div>
+  <div class="gwd-div-6fbv" id="rating">
+  <section class="content bgcolor-10">
+				
+				<span class="input input--shoko">
+					<input class="input__field input__field--shoko" type="text" id="input-field" />
+					<label class="input__label input__label--shoko" for="input-field">
+						<span class="input__label-content input__label-content--shoko"></span>
+					</label>
+					<svg class="graphic graphic--shoko" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+						<path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"/>
+					</svg>
+				</span>
+				
+			</section>
+  </div>
+
+</body>
+<script>
+   "use strict";
+$( window ).load(function() {
+   sayIt("Hoeveel heb je van deze afbeelding?   Spreek een getal tussen 1 en 5.");
+   // first make sure annyang started succesfully
+  if (annyang) {
+      
+      //write the rating in the text input
+      var detectRating = function (value) {
+       $('#input-field').focus();
+       $('#input-field').val(value);
+        $('#input-field').focusout();
+       window.setTimeout( function() {
+           console.log("here");
+       
+       $('#question').focus();
+      }, 200);
+       
+      }
+      
+      var commands = {
+      ':number': detectRating
+    };
+    // OPTIONAL: activate debug mode for detailed logging in the console
+    //annyang.debug();
+    // Add voice commands to respond to
+    annyang.addCommands(commands);
+    // OPTIONAL: Set a language for speech recognition (defaults to English)
+    // For a full list of language codes, see the documentation:
+    // https://github.com/TalAter/annyang/blob/master/docs/README.md#languages
+    annyang.setLanguage('nl');
+    // Start listening. You can call this here, or attach this call to an event, button, etc.
+    annyang.start();
+  }
+});  
+  
+      
+</script>
+</html>
