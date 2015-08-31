@@ -32,6 +32,30 @@ var codes = [
 
   ];
     $(document).ready(function () {
+        
+        function startTimer() {
+            // insert counter logic
+            var timer = 60*60,
+                minutes, seconds;
+            
+            var timeImterval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                //display.text(minutes + ":" + seconds);
+                $('#minutes').html(minutes);
+                $('#seconds').html(seconds);
+               
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        };
+        
+        
         function changeBackground(src) {
             //$('#background').attr("src", src);
             $('#background').fadeOut(200, function () {
@@ -59,4 +83,6 @@ var codes = [
             }
 
         });
+        
+        startTimer();
     });
