@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:url"           content="http://cristianbara.github.io/favyourself/index.html" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Fav Yourself" />
-    <meta property="og:description"   content="Mark your achievements with this simple app. You will boost your self confidence and self esteem." />
-    <meta property="og:image"         content="http://cristianbara.github.io/favyourself/img/logo.png" />
+    <meta property="og:url" content="http://cristianbara.github.io/favyourself/index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fav Yourself" />
+    <meta property="og:description" content="Mark your achievements with this simple app. You will boost your self confidence and self esteem." />
+    <meta property="og:image" content="http://cristianbara.github.io/favyourself/img/logo.png" />
 
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Merriweather' rel='stylesheet' type='text/css'>
@@ -25,40 +25,46 @@
 
 <body>
     <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-    
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <div style="position: fixed; width: 100vw; height: 8vh; background: white; color: black; z-index: 2; box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); ">
         <img src="img/logo.png" style="position: relative; float: left; width: 7vh; height: 7vh; margin-left: 2em;">
         <div style="position:relative; float: left; height: 7vh; width: 80vw; display:table; table-layout: auto;">
-        <span style="display: table-cell; vertical-align: middle; horizontal-align: right; "> 
+            <span style="display: table-cell; vertical-align: middle; horizontal-align: right; "> 
             <b style="font-weight: 700;"> Fav Yourself </b> <span class="header-hero-text">&nbsp;&nbsp;&nbsp; Your self-confidence booster app.</span></span>
-        
-        <span style="display: table-cell; vertical-align: middle"><a href="http://cristianbara.github.io/" style="border-bottom: 2px solid #ed8e0c; cursor: pointer; color: black;">by CB web dev.</a></span>
-        </div>
-        
-    </div>
-    
-    <div style="position: fixed; width: 100vw; height: 8vh; bottom:0; background: rgba(245, 245, 245, 0.73); color: white; z-index: 2; box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); ">       
-        
-        <span style="position: absolute; top: 2.5vh; left: 0; width: 100%; text-align: center; line-height: 90%; letter-spacing: 20px;">
+
+            <span style="display: table-cell; vertical-align: middle; letter-spacing: 10px; line-height: 80%;">
             <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://cristianbara.github.io/favyourself/" data-via="CristianDanBara" data-hashtags="FavYourself">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>            
             <div class="fb-like" data-href="http://cristianbara.github.io/favyourself/index.html" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+            </span>
+        </div>
+
+    </div>
+
+    <div style="position: fixed; width: 100vw; height: 8vh; bottom:0; background: rgba(245, 245, 245, 0.73); color: white; z-index: 2; box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); ">
+
+        <span style="position: absolute; top: 3vh; left: 0; width: 100%; text-align: center; line-height: 90%;">
+            
+            <a href="http://cristianbara.github.io/" style="border: 2px solid #ed8e0c; cursor: pointer; color: black;  padding: 5px; background: white;">by CB web dev.</a>
             <!--<a href="#" style="border-bottom: 2px solid #ed8e0c; cursor: pointer; color: white;">DONATE -->
 <!--<a href='https://pledgie.com/campaigns/30172' target="_blank"><img alt='Click here to lend your support to: Help the FavYourself app to boost your self-confidence and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/30172.png?skin_name=chrome' border='0' >
 </a>-->
             <!--</a> -->
         </span>
-        
-        
+
+
     </div>
-    
+
     <section class="cd-fixed-background img-1" data-type="slider-item">
         <div class="cd-content">
             <h2>Fav Yourself</h2>
@@ -88,19 +94,19 @@
             <a href="https://github.com/cristianbara/favYourself/releases/tag/v1.0.0" target="_blank"><span style="border: 1px solid white; padding-left: 2em; padding-right: 2em; cursor: pointer; color:white;">GET SOURCE CODE</span></a>
         </div>
     </section>
-    
-	<section class="cd-fixed-background img-3" data-type="slider-item">
-		<div class="cd-content">
-			<h2>Special thanks</h2>
-			<p>This website is a web-remix result based on the awesome framework from <a href="http://codyhouse.co/gem/fixed-background-effect/">codyhouse.co</a></p>
+
+    <section class="cd-fixed-background img-3" data-type="slider-item">
+        <div class="cd-content">
+            <h2>Special thanks</h2>
+            <p>This website is a web-remix result based on the awesome framework from <a href="http://codyhouse.co/gem/fixed-background-effect/">codyhouse.co</a></p>
             <br>
             <p>This beautiful images were created using <a href="http://magicmockups.com/">magicmockups.com</a></p>
             <br>
             <p>This Fav Yourself logo is an extension of <a href="https://thenounproject.com/Borengasser/uploads/?i=32760" target="_blank">Write</a>, created by <a href="https://thenounproject.com/Borengasser/" target="_blank">Stephen Borengasser</a> from the Noun Project.</p>
-		</div>
-	</section>    
-    
-<!--
+        </div>
+    </section>
+
+    <!--
 	<section class="cd-fixed-background img-4" data-type="slider-item">
 		<div class="cd-content">
 			<h2>Title here</h2>
