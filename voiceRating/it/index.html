@@ -6,39 +6,40 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="generator" content="Google Web Designer 1.3.2.0521">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script src="js/annyang.js"></script>
     <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/speech.js"></script>
+
 </head>
 
 <body>
     <img src="assets/photo2.jpg" class="gwd-img-05lz gwd-img-rqof gwd-img-x5zt" id="background">
-    <audio autoplay="true">
-        <source src="assets/voiceRating.mp3" type="audio/mpeg">
-    </audio>
-    <div class="gwd-div-o2mb" id="question"> Hoeveel heb je van deze afbeelding?
-        <br> Spreek een getal tussen 1 en 5.</div>
-    <div class="gwd-div-6fbv" id="rating">
-        <section class="content bgcolor-10">
+    
+    <div class="gwd-div-o2mb" id="question"> Quanto ti piace questa immagine?
+        <br> Parla un numero compreso tra 1 e 5.
+    </div>
+        <div class="gwd-div-6fbv" id="rating">
+            <section class="content bgcolor-10">
 
-            <span class="input input--shoko">
+                <span class="input input--shoko">
 					<input class="input__field input__field--shoko" type="text" id="input-field" />
 					<label class="input__label input__label--shoko" for="input-field">
 						<span class="input__label-content input__label-content--shoko"></span>
-            </label>
-            <svg class="graphic graphic--shoko" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0" />
-                <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0" />
-            </svg>
-            </span>
+                </label>
+                <svg class="graphic graphic--shoko" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0" />
+                    <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0" />
+                </svg>
+                </span>
 
-        </section>
-    </div>
+            </section>
+        </div>
 
 </body>
+<script src="js/annyang.js"></script>
+<script src="js/speech.js"></script>
 <script>
     "use strict";
-    $(window).load(function () {
+    $(document).ready(function () {
+        sayIt('Quanto ti piace questa immagine? Parla un numero compreso tra 1 e 5.');
         // first make sure annyang started succesfully
         if (annyang) {
 
@@ -49,7 +50,6 @@
                 $('#input-field').focusout();
                 window.setTimeout(function () {
                     console.log("here");
-
                     $('#question').focus();
                 }, 200);
 
@@ -75,7 +75,7 @@
                     break;
                 default:
                     $('#input-field').val('');
-                    
+
                 }
 
                 $('#input-field').focusout();
@@ -87,41 +87,41 @@
             };
 
             var commands = {
-                 
-                 
+
+
                 // '*1*': matchRating(1),
                 // 'en': matchRating(1),
                 //'ein': matchRating(1),
-               // 'een': matchRating(1),
+                // 'een': matchRating(1),
                 //'an': matchRating(1),
                 //'ain': matchRating(1),
 
-               // '*2*': matchRating(2),
-               // 'zvi': matchRating(2),
-               // 'zwi': matchRating(2),
-               // 'twi': matchRating(2),
-               // 'tvi': matchRating(2),
+                // '*2*': matchRating(2),
+                // 'zvi': matchRating(2),
+                // 'zwi': matchRating(2),
+                // 'twi': matchRating(2),
+                // 'tvi': matchRating(2),
 
-               // '*3*': matchRating(3),
+                // '*3*': matchRating(3),
                 // 'dri': matchRating(3),
-               // 'dry': matchRating(3),
-               // 'tri': matchRating(3),
-               // 'try': matchRating(3),
+                // 'dry': matchRating(3),
+                // 'tri': matchRating(3),
+                // 'try': matchRating(3),
 
-               // '*4*': matchRating(4),
-               // 'fir': matchRating(4),
-               // 'vir': matchRating(4),
-               // 'fier': matchRating(4),
-               // 'vier': matchRating(4),
+                // '*4*': matchRating(4),
+                // 'fir': matchRating(4),
+                // 'vir': matchRating(4),
+                // 'fier': matchRating(4),
+                // 'vier': matchRating(4),
 
-               // '*5*': matchRating(5),
-               // 'feif': matchRating(5),
-               // 'feiv': matchRating(5),
-              //  'feiw': matchRating(5),
-               // 'veif': matchRating(5),
-                
-               // 'aa': matchRating(6),
-               // 'ik denk': matchRating(6),
+                // '*5*': matchRating(5),
+                // 'feif': matchRating(5),
+                // 'feiv': matchRating(5),
+                //  'feiw': matchRating(5),
+                // 'veif': matchRating(5),
+
+                // 'aa': matchRating(6),
+                // 'ik denk': matchRating(6),
                 ':number': detectRating
 
             };
@@ -132,9 +132,11 @@
             // OPTIONAL: Set a language for speech recognition (defaults to English)
             // For a full list of language codes, see the documentation:
             // https://github.com/TalAter/annyang/blob/master/docs/README.md#languages
-            annyang.setLanguage('nl');
+            annyang.setLanguage('it-IT');
             // Start listening. You can call this here, or attach this call to an event, button, etc.
-            annyang.start({continuous: false});
+            annyang.start({
+                continuous: false
+            });
         }
     });
 </script>

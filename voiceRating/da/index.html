@@ -6,18 +6,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="generator" content="Google Web Designer 1.3.2.0521">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script src="js/annyang.js"></script>
+    
     <script src="js/jquery-1.11.3.min.js"></script>
+    
+    <script src="js/annyang.js"></script>
     <script src="js/speech.js"></script>
 </head>
 
 <body>
     <img src="assets/photo2.jpg" class="gwd-img-05lz gwd-img-rqof gwd-img-x5zt" id="background">
     <audio autoplay="true">
-        <source src="assets/voiceRating.mp3" type="audio/mpeg">
+        <source src="assets/translate_tts_da.mp3" type="audio/mpeg">
     </audio>
-    <div class="gwd-div-o2mb" id="question"> Hoeveel heb je van deze afbeelding?
-        <br> Spreek een getal tussen 1 en 5.</div>
+    <div class="gwd-div-o2mb" id="question"> 
+        Hvor meget kan du lide dette billede? <br>Taler et tal mellem 1 og 5.
+    </div>
     <div class="gwd-div-6fbv" id="rating">
         <section class="content bgcolor-10">
 
@@ -38,7 +41,8 @@
 </body>
 <script>
     "use strict";
-    $(window).load(function () {
+    $(document).ready(function () {
+        
         // first make sure annyang started succesfully
         if (annyang) {
 
@@ -132,7 +136,7 @@
             // OPTIONAL: Set a language for speech recognition (defaults to English)
             // For a full list of language codes, see the documentation:
             // https://github.com/TalAter/annyang/blob/master/docs/README.md#languages
-            annyang.setLanguage('nl');
+            annyang.setLanguage('da-DK');
             // Start listening. You can call this here, or attach this call to an event, button, etc.
             annyang.start({continuous: false});
         }
