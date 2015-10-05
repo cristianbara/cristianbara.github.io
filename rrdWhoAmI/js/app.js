@@ -1,88 +1,109 @@
 var codes = [
-        {
-            value: '1a2b',
-            hint: 'I am tall.',
-            image: 'assets/photo-1.jpg'
+    {
+        value: '754',
+        hint: 'Haal iedereen weg die groen is',
+        image: 'assets/pic2.jpg'
       },
-        {
-            value: '3c4d',
-            hint: 'I am blond.',
-            image: 'assets/photo-2.jpg'
+    {
+        value: '257',
+        hint: 'Haal iedereen weg die 1 oog heeft',
+        image: 'assets/pic4.jpg'
       },
-        {
-            value: '5e6f',
-            hint: 'I have blue eyes.',
-            image: 'assets/photo-3.jpg'
+    {
+        value: '1784',
+        hint: 'Haal iedereen weg die 3 ogen heeft',
+        image: 'assets/pic5.jpg'
       },
-        {
-            value: '7g8h',
-            hint: 'I have long hair.',
-            image: 'assets/photo-4.jpg'
+    {
+        value: '6743',
+        hint: 'Haal iedereen weg die geel is',
+        image: 'assets/pic6.jpg'
       },
-        {
-            value: '9i10j',
-            hint: 'I am a man.',
-            image: 'assets/photo-5.jpg'
-      },
-        {
-            value: '11k12l',
-            hint: 'I like my courner office.',
-            image: 'assets/photo-6.jpg'
-      },
+    {
+        value: '5837',
+        hint: 'Haal iedereen weg die een hoedje/petje/muts op heeft',
+        image: 'assets/pic1.jpg'
+      }
+    /*,
+           {
+               value: '11k12l',
+               hint: 'I like my courner office.',
+               image: 'assets/photo-6.jpg'
+         },*/
 
   ];
-    $(document).ready(function () {
-        
-        function startTimer() {
-            // insert counter logic
-            var timer = 60*60,
-                minutes, seconds;
-            
-            var timeImterval = setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
+var enteredCodes = [];
+var achievement = new Audio('assets/achievement.mp3');
+var wrong_answer = new Audio('assets/wrong-answer.mp3');
 
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
+$(document).ready(function () {
 
-                //display.text(minutes + ":" + seconds);
-                $('#minutes').html(minutes);
-                $('#seconds').html(seconds);
-               
-                if (--timer < 0) {
-                    timer = duration;
+    function startTimer() {
+        // insert counter logic
+        var timer = 45 * 60,
+            minutes, seconds;
+
+        var timeImterval = setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            //display.text(minutes + ":" + seconds);
+            $('#minutes').html(minutes);
+            $('#seconds').html(seconds);
+
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);
+    };
+
+
+    function changeBackground(src) {
+        //$('#background').attr("src", src);
+        $('#background').fadeOut(200, function () {
+                $("#background").attr('src', src);
+            })
+            .fadeIn(400);
+    };
+
+
+    $('#code-submit').on('click', function () {
+        var inputValue = $('#input-field').val();
+        var correct = 0;
+        for (i = 0; i < codes.length; i++) {
+            if (inputValue == codes[i].value) {
+                for (j = 0; j < enteredCodes.length; j++) {
+                    if (inputValue == enteredCodes[j]) {
+                        correct = 2;
+                         wrong_answer.play();
+                    }
                 }
-            }, 1000);
-        };
-        
-        
-        function changeBackground(src) {
-            //$('#background').attr("src", src);
-            $('#background').fadeOut(200, function () {
-                    $("#background").attr('src', src);
-                })
-                .fadeIn(400);
-        };
-
-
-        $('#code-submit').on('click', function () {
-            var inputValue = $('#input-field').val();
-            var correct = 0;
-            for (i = 0; i < codes.length; i++) {
-                if (inputValue == codes[i].value) {
+                if (correct != 2) {
                     correct = 1;
-                    $('#question').html(codes[i].hint);
+                    enteredCodes.push(inputValue);
+                    $('#question').append('<br>' + codes[i].hint);
                     changeBackground(codes[i].image);
                     $('#input-field').val('');
-                    $('#code-submit').html('Send');
-                    // speak(codes[i].hint);
+                    achievement.play();
+                    var progressline_length =  enteredCodes.length * 20;
+                    $('#progressline').css('width', progressline_length + 'vw');
+                    var progressline_score = enteredCodes.length;
+                    $('#progressline').html(progressline_score + '/5  &nbsp;')
+                    
                 }
-            };
-            if (correct == 0) {
-                $('#code-submit').html('Try again');
+                // $('#code-submit').html('Sturen');
+                // speak(codes[i].hint);
             }
+        };
+        if (correct == 0) {
+            // $('#code-submit').html('Probeer opnieuw');
+            wrong_answer.play();
+        }
 
-        });
-        
-        startTimer();
     });
+
+    startTimer();
+});
