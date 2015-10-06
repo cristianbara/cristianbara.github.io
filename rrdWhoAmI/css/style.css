@@ -44,7 +44,8 @@ body {
     text-align: center;
     text-shadow: 2px 2px 12px rgba(150, 150, 150, 1);
     font-family: 'Norican', cursive;
-    -webkit-text-stroke: 1px #2B1B17;
+    font-weight: 700;
+    -webkit-text-stroke: 1px white;
 }
 
 .gwd-div-6fbv {
