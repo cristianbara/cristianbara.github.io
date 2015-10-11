@@ -483,8 +483,9 @@ body .demo-blog {
   position: fixed;
   top: 16px;
   left: 16px;
-  color: white;
-  z-index: 9999;  
+  color: black;    
+  z-index: 9999; 
+    
 }
 .demo-blog .section-spacer {
   -webkit-box-flex: 1;
