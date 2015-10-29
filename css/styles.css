@@ -248,6 +248,9 @@ body .demo-blog {
 .demo-blog .favyourself .mdl-card__media {
   background-image: url('../images/fayourself-hero.jpg');
 }
+.demo-blog .gwd-mobile-android .mdl-card__media {
+  background-image: url('../images/gw-android-template.jpg');
+}
 .demo-blog .demo-blog__posts > .demo-nav {
   margin: 12px 15px;
   display: -webkit-box;
@@ -314,6 +317,12 @@ body .demo-blog {
   height: 280px;
   cursor: default;
 }
+.demo-blog--blogpost .demo-blog__posts > .mdl-card .mdl-card__media .gwd-mobile-android {
+  background-image: url('../images/gw-android-template.jpg');
+  height: 280px;
+  cursor: default;
+}
+
 .demo-blog--blogpost .comments {
   background-color: #EEE;
 }
