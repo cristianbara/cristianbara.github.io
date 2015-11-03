@@ -453,7 +453,7 @@
 
     <script>
         var videoSet = [];
-        var videoIndex = 0;
+        var videoIndex = -1;
         var quitTraining;
 
         function startTimer(elementId, time) {
@@ -631,10 +631,13 @@
                 var not_selected = {
                     color: 'black'
                 };
+                
+                var count = 0;
 
                 $(this).prevAll().css(selected).html(' ★ ');
                 $(this).css(selected).html(' ★ ');
                 $(this).nextAll().css(not_selected).html(' ☆ ');
+                
 
 
             });
@@ -708,7 +711,8 @@
                 $('#video1').hide();
 
                 $('#rest1').fadeIn();
-                startTimer('#timer1', videoSet[videoIndex-1].setCount * videoSet[videoIndex-1].repetitionCount * 10);
+                // startTimer('#timer1', Math.abs(videoSet[videoIndex-1].setCount) * Math.abs(videoSet[videoIndex-1].repetitionCount) * 10);
+                startTimer('#timer1', 20);
             });
 
             /* $('video').bind('loadeddata', function () {
