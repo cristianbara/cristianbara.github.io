@@ -360,7 +360,7 @@
         <div class="gwd-div-19nn" id="body">
             <div class="gwd-imagebutton-1e5o" id="vt-we-recommend-wrap">
                 <img id="vt-we-recommend" class="gwd-div-d5ad" src="1.jpg">
-                <div class="gwd-div-17np" style="">Wij raden</div>
+                <div class="gwd-div-17np" style="">Wij raden an</div>
             </div>
             <div class="gwd-imagebutton-rlx2" id="vt-your-favorite-wrap">
                 <img id="vt-your-favorite" src="2.jpg" class="gwd-div-d5ad">
@@ -640,7 +640,7 @@
                 data: JSON.stringify({
                     jsonrpc: '2.0',
                     method: 'saveRating',
-                    params: ['2262c098-4e43-46f9-bb7d-0d7ee62fca7e', 'Alex', 2, parseFloat(videoSet[videoIndex-1].exerciseId), count],
+                    params: ['2262c098-4e43-46f9-bb7d-0d7ee62fca7e', 'Alex', 2, videoSet[videoIndex-1].exerciseId, parseFloat(count)],
                     id: "jsonrpc"
                 }), // id is needed !!
                 type: "POST",
@@ -650,8 +650,9 @@
                     var rating = {
                         visitId: '2262c098-4e43-46f9-bb7d-0d7ee62fca7e',
                         userId: 'Alex',
-                        exerciseId: parseFloat(videoSet[videoIndex-1].exerciseId),
-                        rating: count
+                        rateType: 2,
+                        exerciseId: videoSet[videoIndex-1].exerciseId,
+                        rating: parseFloat(count)
                                  }
                     console.log('sent feedback:'); 
                     console.log(rating);
@@ -690,7 +691,7 @@
                 data: JSON.stringify({
                     jsonrpc: '2.0',
                     method: 'saveRating',
-                    params: ['2262c098-4e43-46f9-bb7d-0d7ee62fca7e', 'Alex', 1, parseFloat(videoSet[videoIndex-1].exerciseId), count],
+                    params: ['2262c098-4e43-46f9-bb7d-0d7ee62fca7e', 'Alex', 1, videoSet[videoIndex-1].exerciseId, parseFloat(count)],
                     id: "jsonrpc"
                 }), // id is needed !!
                 type: "POST",
@@ -700,8 +701,9 @@
                     var rating = {
                         visitId: '2262c098-4e43-46f9-bb7d-0d7ee62fca7e',
                         userId: 'Alex',
-                        exerciseId: parseFloat(videoSet[videoIndex-1].exerciseId),
-                        rating: count
+                        rateType: 1,
+                        exerciseId: videoSet[videoIndex-1].exerciseId,
+                        rating: parseFloat(count)
                                  }
                     console.log('sent feedback:'); 
                     console.log(rating);
