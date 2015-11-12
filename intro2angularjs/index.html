@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html ng-app="myToDoApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>AngularJS Intro</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script> -->
+    <script src="angular.min.js"></script>
+    <style type="text/css">
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px inset;
+            -moz-box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px inset;
+            box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px inset;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 6px inset;
+            -moz-box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 6px inset;
+            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 6px inset;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+        }
+        
+        body {
+            -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            -moz-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            -webkit-perspective: 1400px;
+            -moz-perspective: 1400px;
+            perspective: 1400px;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            background-color: transparent;
+        }
+        
+        .gwd-div-bkij {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background-image: none;
+            background-color: rgb(117, 164, 173);
+        }
+        
+        .gwd-div-1stp {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 360px;
+            height: 640px;
+            margin-left: -180px;
+            margin-top: -320px;
+            box-shadow: rgba(0, 0, 0, 0.188235) 0px 10px 20px, rgba(0, 0, 0, 0.227451) 0px 6px 6px;
+            border-radius: 6px;
+            overflow: hidden;
+            line-height: 300%;
+            background-image: none;
+            background-color: rgb(248, 248, 248);
+        }
+        
+        .gwd-div-1vyq {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            text-align: center;
+            font-size: 22px;
+            font-family: Lobster;
+            height: 8%;
+            background-image: none;
+            background-color: rgb(140, 201, 162);
+        }
+        
+        .gwd-div-1n6y {
+            position: absolute;
+            left: 0px;
+            width: 100%;
+            top: 8%;
+            height: 92%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: rgb(238, 238, 238);
+        }
+        
+        .gwd-div-cb5l {
+            position: absolute;
+            border-radius: 50%;
+            left: 267px;
+            top: 559.5px;
+            text-align: center;
+            font-family: Verdana;
+            font-size: 40px;
+            width: 55px;
+            height: 55px;
+            box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 3px, rgba(0, 0, 0, 0.239216) 0px 1px 2px;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            background-image: none;
+            background-color: rgb(142, 88, 224);
+        }
+        
+        .gwd-div-cb5l:hover {
+            box-shadow: rgba(0, 0, 0, 0.188235) 0px 10px 20px, rgba(0, 0, 0, 0.227451) 0px 6px 6px;
+        }
+        
+        .gwd-div-1g9m {
+            position: relative;
+            float: left;
+            margin: 10px;
+            width: 340px;
+            height: 60px;
+            text-align: center;
+            font-family: Verdana;
+            font-size: 18px;
+            background-image: url("assets/paper-item.jpg");
+            background-color: white;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .gwd-div-pjjz {
+            position: absolute;
+            color: green;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            width: 40px;
+            cursor: pointer;
+        }
+        
+        .done {
+            text-decoration: line-through;
+        }
+        
+        .done-btn {
+            color: red;
+        }
+        
+        .gwd-div-text {
+            left: 2px;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="angular-contenteditable.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="myToDoAppController">
+    <div class="gwd-div-bkij" id="background"></div>
+    <div class="gwd-div-1stp" id="phone">
+        <div class="gwd-div-1vyq" id="title">My to-dos</div>
+        <div class="gwd-div-1n6y" id="body">
+            <div ng-repeat="item in model" class="gwd-div-1g9m" ng-class="{done: item.done == true}" ng-switch="item.done">
+                <div class="gwd-div-text" style="" contenteditable="true" ng-model="item.text" strip-br="true" strip-tags="true" select-non-editable="true">
+                   <!-- {{item.text}} -->
+                </div>
+                <div class="gwd-div-pjjz" ng-switch-when="false" ng-click="markAsDone($index)">✓</div>
+                <div class="gwd-div-pjjz done-btn" ng-switch-when="true" ng-click="removeToDo($index)">x</div>
+            </div>
+        </div>
+        <div class="gwd-div-cb5l" id="button" ng-click="addToDo()">+</div>
+    </div>
+</body>
+
+</html>
