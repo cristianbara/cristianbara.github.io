@@ -72,19 +72,19 @@
                 </div>
                 <div class="gwd-div-6lr1 enjoy-rating" id="">Hoeveel heb je genieten van deze oefening?
                     <br>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="1.0"> ☆ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="2.0"> ☆ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="3.0"> ☆ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="4.0"> ☆ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="5.0"> ☆ </span>
+                    <span class="rating-btn" data-star-count="1.0"> ★ </span>
+                    <span class="rating-btn" data-star-count="2.0"> ★ </span>
+                    <span class="rating-btn" data-star-count="3.0"> ★ </span>
+                    <span class="rating-btn" data-star-count="4.0"> ★ </span>
+                    <span class="rating-btn" data-star-count="5.0"> ★ </span>
                 </div>
                 <div class="gwd-div-6lr1 difficulty-rating" id="">Hoe moeilijk was deze oefening?
                     <br>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="1.0"> ☖ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="2.0"> ☖ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="3.0"> ☖ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="4.0"> ☖ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="5.0"> ☖ </span>
+                    <span class="rating-btn" data-star-count="1.0"> ☗ </span>
+                    <span class="rating-btn" data-star-count="2.0"> ☗ </span>
+                    <span class="rating-btn" data-star-count="3.0"> ☗ </span>
+                    <span class="rating-btn" data-star-count="4.0"> ☗ </span>
+                    <span class="rating-btn" data-star-count="5.0"> ☗ </span>
                 </div>
             </div>
 
@@ -97,19 +97,19 @@
                 </div>
                 <div class="gwd-div-6lr1 enjoy-rutine-rating" id="">Hoeveel heb je genieten van deze oefening?
                     <br>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="1.0"> ☆ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="2.0"> ☆ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="3.0"> ☆ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="4.0"> ☆ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="5.0"> ☆ </span>
+                    <span class="rating-btn" data-star-count="1.0"> ★ </span>
+                    <span class="rating-btn" data-star-count="2.0"> ★ </span>
+                    <span class="rating-btn" data-star-count="3.0"> ★ </span>
+                    <span class="rating-btn" data-star-count="4.0"> ★ </span>
+                    <span class="rating-btn" data-star-count="5.0"> ★ </span>
                 </div>
                 <div class="gwd-div-6lr1 difficulty-rutine-rating" id="">Hoe moeilijk was deze oefening?
                     <br>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="1.0"> ☖ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="2.0"> ☖ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="3.0"> ☖ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="4.0"> ☖ </span>
-                    <span style="font-size: 40px; cursor:pointer;" data-star-count="5.0"> ☖ </span>
+                    <span class="rating-btn" data-star-count="1.0"> ☗ </span>
+                    <span class="rating-btn" data-star-count="2.0"> ☗ </span>
+                    <span class="rating-btn" data-star-count="3.0"> ☗ </span>
+                    <span class="rating-btn" data-star-count="4.0"> ☗ </span>
+                    <span class="rating-btn" data-star-count="5.0"> ☗ </span>
                 </div>
 
 
@@ -127,8 +127,8 @@
         var videoIndex = -1;
         var quitTraining;
         var thisSessionID = "";
-        var enjoy_count = 0;
-        var dificulty_count = 0;
+        var enjoy_count = -1;
+        var dificulty_count = -1;
 
         function generateUUID() {
             var d = new Date().getTime();
@@ -290,14 +290,14 @@
 
         function clearRatings() {
             var clear = {
-                color: 'black'
+                color: 'dimgray'
             };
 
             $('.enjoy-rating > span').css(clear);
-            $('.enjoy-rating > span').html(' ☆ ');
+            // $('.enjoy-rating > span').html(' ☆ ');
 
             $('.difficulty-rating > span').css(clear);
-            $('.difficulty-rating > span').html(' ☖ ');
+            // $('.difficulty-rating > span').html(' ☖ ');
 
         }
 
@@ -383,16 +383,16 @@
                     color: 'orange'
                 };
                 var not_selected = {
-                    color: 'black'
+                    color: 'dimgray'
                 };
 
                 enjoy_count = 0;
                 enjoy_count = $(this).data('star-count');
 
 
-                $(this).prevAll().css(selected).html(' ★ ');
-                $(this).css(selected).html(' ★ ');
-                $(this).nextAll().css(not_selected).html(' ☆ ');
+                $(this).prevAll().css(selected);
+                $(this).css(selected);
+                $(this).nextAll().css(not_selected);
 
 
 
@@ -404,15 +404,15 @@
                     color: '#59506F'
                 };
                 var not_selected = {
-                    color: 'black'
+                    color: 'dimgray'
                 };
 
                 dificulty_count = 0;
                 dificulty_count = $(this).data('star-count');
 
-                $(this).prevAll().css(selected).html(' ☗ ');
-                $(this).css(selected).html(' ☗ ');
-                $(this).nextAll().css(not_selected).html(' ☖ ');
+                $(this).prevAll().css(selected);
+                $(this).css(selected);
+                $(this).nextAll().css(not_selected);
 
 
             });
@@ -470,7 +470,8 @@
                 $('#video1').hide();
 
                 $('#rest1').fadeIn();
-                if(videoIndex<5 || videoIndex >videoSet.length - 5 )
+               
+                 if(videoIndex < 4 || videoIndex > videoSet.length - 4)
                     {
                         // hide ratings
                         $('.enjoy-rating').hide();
@@ -480,7 +481,7 @@
                     //show ratings
                          $('.enjoy-rating').show();
                         $('.difficulty-rating').show();
-                }
+                } 
                 // startTimer('#timer1', Math.abs(videoSet[videoIndex-1].setCount) * Math.abs(videoSet[videoIndex-1].repetitionCount) * 10);
                 startTimer('#timer1', 20);
             });
