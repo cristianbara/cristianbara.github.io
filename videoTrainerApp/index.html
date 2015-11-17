@@ -127,6 +127,8 @@
         var videoIndex = -1;
         var quitTraining;
         var thisSessionID = "";
+        var enjoy_count = 0;
+        var dificulty_count = 0;
 
         function generateUUID() {
             var d = new Date().getTime();
@@ -148,9 +150,73 @@
 
                 if (quitTraining == false) {
                     if (currentTimeCount == 0) {
-                        
+
                         // save rastings to reasoner.
+                        // send enjoyment feedback to PARS
+                        $.ajax({
+                            url: 'https://myhealthframe.nl/ParsWebService/services/pars',
+                            data: JSON.stringify({
+                                jsonrpc: '2.0',
+                                method: 'saveRating',
+                                params: [thisSessionID, 'Alex', 2, videoSet[videoIndex - 1].exerciseId, parseFloat(enjoy_count)],
+                                id: "jsonrpc"
+                            }), // id is needed !!
+                            type: "POST",
+                            dataType: "json",
+                            success: function () {
+
+                                var rating = {
+                                    visitId: thisSessionID,
+                                    userId: 'Alex',
+                                    rateType: 2,
+                                    exerciseId: videoSet[videoIndex - 1].exerciseId,
+                                    rating: parseFloat(enjoy_count),
+                                    forVideoIndex: videoIndex - 1,
+                                }
+                                console.log('sent feedback:');
+                                console.log(rating);
+
+
+                            },
+                            error: function (err) {
+                                alert("ERROR: The system is not functioning. Please try again later.");
+                            }
+
+                        });
                         
+                        // send enjoyment feedback to PARS
+                        $.ajax({
+                            url: 'https://myhealthframe.nl/ParsWebService/services/pars',
+                            data: JSON.stringify({
+                                jsonrpc: '2.0',
+                                method: 'saveRating',
+                                params: [thisSessionID, 'Alex', 1, videoSet[videoIndex - 1].exerciseId, parseFloat(dificulty_count)],
+                                id: "jsonrpc"
+                            }), // id is needed !!
+                            type: "POST",
+                            dataType: "json",
+                            success: function () {
+
+                                var rating = {
+                                    visitId: thisSessionID,
+                                    userId: 'Alex',
+                                    rateType: 1,
+                                    exerciseId: videoSet[videoIndex - 1].exerciseId,
+                                    rating: parseFloat(dificulty_count)
+                                }
+                                console.log('sent feedback:');
+                                console.log(rating);
+
+
+                            },
+                            error: function (err) {
+                                alert("ERROR: The system is not functioning. Please try again later.");
+                            }
+
+                        });
+
+
+
                         // show next video [todo]
                         setVideo(videoIndex, videoSet.length);
 
@@ -173,7 +239,7 @@
 
         function getVideoSet() {
             thisSessionID = generateUUID();
-            
+
             $.ajax({
                 url: 'https://myhealthframe.nl/ParsWebService/services/pars',
                 data: JSON.stringify({
@@ -217,7 +283,9 @@
                 $('#video-source').attr('src', videoSet[index].videoURL);
                 $('#gwd-video_1')[0].load();
                 console.log('setting video: ' + videoSet[index].videoURL);
-            }
+            };
+            
+            videoIndex++;
         };
 
         function clearRatings() {
@@ -244,8 +312,7 @@
 
             $('#video1').on('fadeInComplete', function () {
                 //alert("I should play");
-                // setVideo(videoIndex);
-                videoIndex++;
+                // setVideo(videoIndex);             
 
                 $(this).children('video').get(0).currentTime = 0;
                 $(this).children('video').get(0).play(0);
@@ -319,38 +386,8 @@
                     color: 'black'
                 };
 
-                var count = 0; 
-                count = $(this).data('star-count');
-                // send enjoyment feedback to PARS
-                $.ajax({
-                    url: 'https://myhealthframe.nl/ParsWebService/services/pars',
-                    data: JSON.stringify({
-                        jsonrpc: '2.0',
-                        method: 'saveRating',
-                        params: [thisSessionID, 'Alex', 2, videoSet[videoIndex - 1].exerciseId, parseFloat(count)],
-                        id: "jsonrpc"
-                    }), // id is needed !!
-                    type: "POST",
-                    dataType: "json",
-                    success: function () {
-
-                        var rating = {
-                            visitId: thisSessionID,
-                            userId: 'Alex',
-                            rateType: 2,
-                            exerciseId: videoSet[videoIndex - 1].exerciseId,
-                            rating: parseFloat(count)
-                        }
-                        console.log('sent feedback:');
-                        console.log(rating);
-
-
-                    },
-                    error: function (err) {
-                        alert("ERROR: The system is not functioning. Please try again later.");
-                    }
-
-                });
+                enjoy_count = 0;
+                enjoy_count = $(this).data('star-count');
 
 
                 $(this).prevAll().css(selected).html(' ★ ');
@@ -370,38 +407,8 @@
                     color: 'black'
                 };
 
-                var count = 0;
-                count = $(this).data('star-count');
-                // send enjoyment feedback to PARS
-                $.ajax({
-                    url: 'https://myhealthframe.nl/ParsWebService/services/pars',
-                    data: JSON.stringify({
-                        jsonrpc: '2.0',
-                        method: 'saveRating',
-                        params: [thisSessionID, 'Alex', 1, videoSet[videoIndex - 1].exerciseId, parseFloat(count)],
-                        id: "jsonrpc"
-                    }), // id is needed !!
-                    type: "POST",
-                    dataType: "json",
-                    success: function () {
-
-                        var rating = {
-                            visitId: thisSessionID,
-                            userId: 'Alex',
-                            rateType: 1,
-                            exerciseId: videoSet[videoIndex - 1].exerciseId,
-                            rating: parseFloat(count)
-                        }
-                        console.log('sent feedback:');
-                        console.log(rating);
-
-
-                    },
-                    error: function (err) {
-                        alert("ERROR: The system is not functioning. Please try again later.");
-                    }
-
-                });
+                dificulty_count = 0;
+                dificulty_count = $(this).data('star-count');
 
                 $(this).prevAll().css(selected).html(' ☗ ');
                 $(this).css(selected).html(' ☗ ');
@@ -463,6 +470,17 @@
                 $('#video1').hide();
 
                 $('#rest1').fadeIn();
+                if(videoIndex<5 || videoIndex >videoSet.length - 5 )
+                    {
+                        // hide ratings
+                        $('.enjoy-rating').hide();
+                        $('.difficulty-rating').hide();
+                        
+                    } else {
+                    //show ratings
+                         $('.enjoy-rating').show();
+                        $('.difficulty-rating').show();
+                }
                 // startTimer('#timer1', Math.abs(videoSet[videoIndex-1].setCount) * Math.abs(videoSet[videoIndex-1].repetitionCount) * 10);
                 startTimer('#timer1', 20);
             });
