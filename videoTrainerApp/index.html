@@ -6,336 +6,7 @@
     <meta charset="utf-8">
     <title>video trainer</title>
     <meta name="generator" content="Google Web Designer 1.4.1.0901">
-    <style type="text/css">
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            margin: 0px;
-        }
-        
-        body {
-            -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            -moz-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            -webkit-perspective: 1400px;
-            -moz-perspective: 1400px;
-            perspective: 1400px;
-            -webkit-transform-style: preserve-3d;
-            -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-            background-color: transparent;
-        }
-        
-        .app-stretch {
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-            background-image: url("bg.jpg");
-            background-size: cover;
-            background-position: 50% 50%;
-            background-repeat: no-repeat;
-        }
-        
-        .gwd-div-3eb5 {
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 15%;
-            background: linear-gradient(rgb(30, 87, 153) 0%, rgba(125, 185, 232, 0) 100%);
-        }
-        
-        .gwd-div-19nn {
-            position: absolute;
-            left: 0px;
-            width: 100%;
-            height: 75%;
-            top: 15%;
-        }
-        
-        .gwd-div-e0dw {
-            position: absolute;
-            left: 0px;
-            top: 90%;
-            width: 100%;
-            height: 10%;
-            background: linear-gradient(rgba(255, 255, 255, 0) -1%, rgba(255, 255, 255, 0) 0%, rgba(181, 181, 181, 0) 29%, rgba(0, 0, 0, 0.65098) 100%);
-        }
-        
-        .gwd-imagebutton-1e5o {
-            position: absolute;
-            left: 25%;
-            top: 5%;
-            height: 200px;
-            width: 200px;
-            border: 2px solid rgb(245, 243, 243);
-            border-radius: 15px;
-            border-image-source: none;
-            overflow: hidden;
-        }
-        
-        .gwd-imagebutton-rlx2 {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border: 2px solid rgb(252, 249, 249);
-            border-radius: 15px;
-            border-image-source: none;
-            overflow: hidden;
-            top: 5%;
-            right: 25%;
-        }
-        
-        .gwd-imagebutton-1mkg {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border: 2px solid rgb(248, 245, 245);
-            border-image-source: none;
-            border-radius: 15px;
-            bottom: 5%;
-            left: 25%;
-            overflow: hidden;
-        }
-        
-        .gwd-imagebutton-j5wk {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border: 2px solid rgb(255, 255, 255);
-            border-radius: 15px;
-            border-image-source: none;
-            right: 25%;
-            bottom: 5%;
-            overflow: hidden;
-        }
-        
-        .gwd-div-rdsn {
-            position: absolute;
-            width: 100%;
-            left: 0px;
-            top: 0px;
-            font-family: Roboto;
-            font-size: 34px;
-            font-weight: bold;
-            text-align: center;
-            line-height: 200%;
-            height: 65%;
-            color: white;
-            text-shadow: rgb(0, 0, 0) 3px 3px 0px, rgb(0, 0, 0) -1px -1px 0px, rgb(0, 0, 0) 1px -1px 0px, rgb(0, 0, 0) -1px 1px 0px, rgb(0, 0, 0) 1px 1px 0px;
-        }
-        
-        .gwd-div-d8ml {
-            position: absolute;
-            left: 0px;
-            top: 65%;
-            width: 100%;
-            height: 35%;
-            text-align: center;
-            font-weight: 800;
-            font-family: 'Arial Black';
-            font-size: 20px;
-            color: white;
-            text-shadow: rgb(0, 0, 0) 3px 3px 0px, rgb(0, 0, 0) -1px -1px 0px, rgb(0, 0, 0) 1px -1px 0px, rgb(0, 0, 0) -1px 1px 0px, rgb(0, 0, 0) 1px 1px 0px;
-        }
-        
-        .gwd-div-7tg3 {
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-image: url(bg4.jpg);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: rgb(255, 255, 255);
-        }
-        
-        .gwd-img-htup {
-            position: absolute;
-            width: 64px;
-            height: 64px;
-            left: 50%;
-            top: 50%;
-            margin-top: -32px;
-            margin-left: -32px;
-            opacity: 0.7;
-        }
-        
-        .gwd-div-suk4 {
-            position: relative;
-            float: left;
-            height: 100%;
-            width: 100%;
-            background-image: none;
-            background-color: rgba(250, 250, 250, 0.5);
-        }
-        
-        .gwd-video-18oz {
-            height: 96%;
-            margin: 0px auto;
-            display: table-cell;
-            text-align: center;
-            vertical-align: middle;
-            border-radius: 5px;
-            object-fit: cover;
-            margin-top: 1%;
-            border: 1px solid black;
-        }
-        
-        .gwd-div-d5ad {
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .gwd-div-17np {
-            position: absolute;
-            height: 35px;
-            width: 100%;
-            left: 0px;
-            bottom: 0px;
-            text-align: center;
-            font-family: Roboto;
-            font-size: 18px;
-            color: white;
-            text-shadow: rgb(0, 0, 0) 2px 1px 0px;
-            cursor: pointer;
-        }
-        
-        .gwd-div-14ac {
-            position: absolute;
-            left: 0px;
-            width: 100%;
-            bottom: 0px;
-            padding-bottom: 5%;
-            text-align: center;
-            font-family: Roboto;
-            font-size: 24px;
-            color: black;
-            text-shadow: white 2px 1px 0px;
-        }
-        
-        .gwd-div-14ac::before {
-            content: '';
-            display: inline-block;
-            vertical-align: middle;
-        }
-        
-        .gwd-div-1w5r {
-            position: relative;
-            float: left;
-            margin-top: 10%;
-            width: 100%;
-            height: 200px;
-            font-family: Roboto;
-            font-size: 36px;
-            text-align: center;
-            color: black;
-        }
-        
-        .gwd-div-6lr1 {
-            position: relative;
-            float: left;
-            height: 85px;
-            margin-top: 2%;
-            margin-bottom: 2%;
-            width: 100%;
-            font-family: Roboto;
-            font-size: 24px;
-            text-align: center;
-        }
-        
-        .gwd-div-1u47 {
-            position: fixed;
-            top: 10px;
-            width: 50px;
-            height: 50px;
-            border: 1px solid #6D6D6D;
-            border-radius: 50%;
-            left: 90%;
-            background-image: none;
-            background-color: rgb(255, 255, 255);
-            font-family: Roboto;
-            font-size: 32px;
-            text-align: center;
-            line-height: 150%;
-            cursor: pointer;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        }
-        
-        .gwd-div-srpl {
-            position: absolute;
-            width: 120px;
-            height: 30px;
-            border: solid darkorange;
-            border-width: 2px;
-            right: 3%;
-            top: 257.95px;
-            font-family: Roboto;
-            font-size: 18px;
-            text-align: center;
-            line-height: 168%;
-            cursor: pointer;
-            background: white;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        }
-        
-        .gwd-div-1gbj {
-            position: absolute;
-            width: 120px;
-            height: 30px;
-            border: solid darkorange;
-            border-width: 2px;
-            right: 3%;
-            top: 214.95px;
-            font-family: Roboto;
-            font-size: 18px;
-            text-align: center;
-            line-height: 168%;
-            cursor: pointer;
-            background: white;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        }
-        
-        .gwd-div-nnlo {
-            position: absolute;
-            width: 120px;
-            height: 30px;
-            right: 3%;
-            top: 302.95px;
-            border: solid darkorange;
-            border-width: 2px;
-            font-family: Roboto;
-            font-size: 18px;
-            text-align: center;
-            line-height: 168%;
-            cursor: pointer;
-            background: white;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        }
-        
-        #splashscreen {
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-image: url(screen/android/screen-xhdpi-landscape.png);
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: rgb(255, 255, 255);
-        }
-    </style>
+    <link href="styile.css" rel="stylesheet" type="text/css">
     <link href="gwdpage_style.css" data-version="8" data-exports-type="gwd-page" rel="stylesheet">
     <link href="gwdvideo_style.css" data-version="5" data-exports-type="gwd-video" rel="stylesheet">
     <link href="gwdimage_style.css" data-version="6" data-exports-type="gwd-image" rel="stylesheet">
@@ -455,6 +126,17 @@
         var videoSet = [];
         var videoIndex = -1;
         var quitTraining;
+        var thisSessionID = "";
+
+        function generateUUID() {
+            var d = new Date().getTime();
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = (d + Math.random() * 16) % 16 | 0;
+                d = Math.floor(d / 16);
+                return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+            return uuid;
+        };
 
         function startTimer(elementId, time) {
             var currentTimeCount = time;
@@ -462,10 +144,13 @@
             var timer = setInterval(function () {
                 currentTimeCount--;
                 $(elementId).html(currentTimeCount + " sec.");
-                console.log("timer - quitTraining:" + quitTraining );
+                console.log("timer - quitTraining:" + quitTraining);
 
                 if (quitTraining == false) {
                     if (currentTimeCount == 0) {
+                        
+                        // save rastings to reasoner.
+                        
                         // show next video [todo]
                         setVideo(videoIndex, videoSet.length);
 
@@ -487,12 +172,14 @@
         };
 
         function getVideoSet() {
+            thisSessionID = generateUUID();
+            
             $.ajax({
                 url: 'https://myhealthframe.nl/ParsWebService/services/pars',
                 data: JSON.stringify({
                     jsonrpc: '2.0',
                     method: 'getRecommendedExercises',
-                    params: ['2262c098-4e43-46f9-bb7d-0d7ee62fca7e', 'Alex'],
+                    params: [, 'Alex'],
                     id: "jsonrpc"
                 }), // id is needed !!
                 type: "POST",
@@ -572,7 +259,7 @@
                 getVideoSet();
 
                 quitTraining = false;
-                console.log("we recommend - quitTraining:" + quitTraining );
+                console.log("we recommend - quitTraining:" + quitTraining);
 
                 $('#video1').hide();
                 $('#rest1').hide();
@@ -604,7 +291,7 @@
                 $('#rest1').hide();
                 $('#end').hide();
 
-                
+
             });
 
             // add main vt buttons click events handlers
@@ -631,46 +318,45 @@
                 var not_selected = {
                     color: 'black'
                 };
-                
-                var count = 0;
+
+                var count = 0; 
                 count = $(this).data('star-count');
                 // send enjoyment feedback to PARS
                 $.ajax({
-                url: 'https://myhealthframe.nl/ParsWebService/services/pars',
-                data: JSON.stringify({
-                    jsonrpc: '2.0',
-                    method: 'saveRating',
-                    params: ['2262c098-4e43-46f9-bb7d-0d7ee62fca7e', 'Alex', videoSet[videoIndex-1].exerciseId, 2, parseFloat(count)],
-                    id: "jsonrpc"
-                }), // id is needed !!
-                type: "POST",
-                dataType: "json",
-                success: function () { 
-                
-                    var rating = {
-                        visitId: '2262c098-4e43-46f9-bb7d-0d7ee62fca7e',
-                        userId: 'Alex',
-                        
-                        exerciseId: videoSet[videoIndex-1].exerciseId,
-                        rateType: 2,
-                        rating: parseFloat(count)
-                                 }
-                    console.log('sent feedback:'); 
-                    console.log(rating);
-                
+                    url: 'https://myhealthframe.nl/ParsWebService/services/pars',
+                    data: JSON.stringify({
+                        jsonrpc: '2.0',
+                        method: 'saveRating',
+                        params: [thisSessionID, 'Alex', 2, videoSet[videoIndex - 1].exerciseId, parseFloat(count)],
+                        id: "jsonrpc"
+                    }), // id is needed !!
+                    type: "POST",
+                    dataType: "json",
+                    success: function () {
 
-                },
-                error: function (err) {
-                    alert("ERROR: The system is not functioning. Please try again later.");
-                }
+                        var rating = {
+                            visitId: thisSessionID,
+                            userId: 'Alex',
+                            rateType: 2,
+                            exerciseId: videoSet[videoIndex - 1].exerciseId,
+                            rating: parseFloat(count)
+                        }
+                        console.log('sent feedback:');
+                        console.log(rating);
 
-            });
-            
+
+                    },
+                    error: function (err) {
+                        alert("ERROR: The system is not functioning. Please try again later.");
+                    }
+
+                });
+
 
                 $(this).prevAll().css(selected).html(' ★ ');
                 $(this).css(selected).html(' ★ ');
                 $(this).nextAll().css(not_selected).html(' ☆ ');
-                
+
 
 
             });
@@ -683,40 +369,39 @@
                 var not_selected = {
                     color: 'black'
                 };
-                
+
                 var count = 0;
                 count = $(this).data('star-count');
                 // send enjoyment feedback to PARS
                 $.ajax({
-                url: 'https://myhealthframe.nl/ParsWebService/services/pars',
-                data: JSON.stringify({
-                    jsonrpc: '2.0',
-                    method: 'saveRating',
-                    params: ['2262c098-4e43-46f9-bb7d-0d7ee62fca7e', 'Alex', videoSet[videoIndex-1].exerciseId, 1, parseFloat(count)],
-                    id: "jsonrpc"
-                }), // id is needed !!
-                type: "POST",
-                dataType: "json",
-                success: function () { 
-                
-                    var rating = {
-                        visitId: '2262c098-4e43-46f9-bb7d-0d7ee62fca7e',
-                        userId: 'Alex',
-                        
-                        exerciseId: videoSet[videoIndex-1].exerciseId,
-                        rateType: 1,
-                        rating: parseFloat(count)
-                                 }
-                    console.log('sent feedback:'); 
-                    console.log(rating);
-                
+                    url: 'https://myhealthframe.nl/ParsWebService/services/pars',
+                    data: JSON.stringify({
+                        jsonrpc: '2.0',
+                        method: 'saveRating',
+                        params: [thisSessionID, 'Alex', 1, videoSet[videoIndex - 1].exerciseId, parseFloat(count)],
+                        id: "jsonrpc"
+                    }), // id is needed !!
+                    type: "POST",
+                    dataType: "json",
+                    success: function () {
 
-                },
-                error: function (err) {
-                    alert("ERROR: The system is not functioning. Please try again later.");
-                }
+                        var rating = {
+                            visitId: thisSessionID,
+                            userId: 'Alex',
+                            rateType: 1,
+                            exerciseId: videoSet[videoIndex - 1].exerciseId,
+                            rating: parseFloat(count)
+                        }
+                        console.log('sent feedback:');
+                        console.log(rating);
 
-            });
+
+                    },
+                    error: function (err) {
+                        alert("ERROR: The system is not functioning. Please try again later.");
+                    }
+
+                });
 
                 $(this).prevAll().css(selected).html(' ☗ ');
                 $(this).css(selected).html(' ☗ ');
@@ -760,9 +445,9 @@
             $('.close').on('click', function () {
                 // stop video play, if any
                 // stopVideo();
-                
+
                 quitTraining = true;
-                console.log("close btn - quitTraining:" + quitTraining );
+                console.log("close btn - quitTraining:" + quitTraining);
 
                 // pause all videos
                 $('#routine').find('#gwd-video_1').get(0).pause();
