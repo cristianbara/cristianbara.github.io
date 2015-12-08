@@ -60,8 +60,12 @@
                     <source id="video-source" type="video/mp4">
                     <!-- src="video2.mp4" -->
                 </video>
-                <!-- <div class="gwd-div-14ac" id="subtitles" style="">Standing up, turn your head to the right</div> -->
 
+                <!-- Video Controls -->
+                <div id="play-pause-btn" style="position: absolute; width: 60px; height: 60px; border-radius: 15px; width: 80px; height: 80px; border: 2px solid #f26363; left: 89%; top: 80%; text-align: center; font-size: 50px; background: white; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);">
+                    <img src="pause.png" style="width: 100%; height: 100%">
+                </div>
+                <input type="range" id="volume-btn" min="0" max="100" value="100" style="position: absolute; left: 83%; top: 57%; transform: rotate(-90deg); border: 2px solid lightgray; border-radius: 15px;">
 
             </div>
 
@@ -117,7 +121,7 @@
 
             </div>
 
-            <div class="gwd-div-1u47 close" id="close">x</div>
+            <div class="gwd-div-1u47 close" id="close">X</div>
         </div>
 
     </div>
@@ -173,8 +177,10 @@
                                     rating: parseFloat(enjoy_count),
                                     forVideoIndex: videoIndex - 1,
                                 }
+
                                 console.log('sent feedback:');
                                 console.log(rating);
+                                enjoy_count = -1;
 
 
                             },
@@ -183,7 +189,7 @@
                             }
 
                         });
-                        
+
                         // send enjoyment feedback to PARS
                         $.ajax({
                             url: 'https://myhealthframe.nl/ParsWebService/services/pars',
@@ -284,7 +290,9 @@
                 $('#gwd-video_1')[0].load();
                 console.log('setting video: ' + videoSet[index].videoURL);
             };
-            
+
+            enjoy_count = -1;
+            dificulty_count = -1;
             videoIndex++;
         };
 
@@ -302,211 +310,232 @@
         }
 
         $(document).ready(function () {
-            /*setTimeout(function() {
-                $('#splashscreen').hide();
-            }, 1500);*/
+        /*setTimeout(function() {
+            $('#splashscreen').hide();
+        }, 1500);*/
+
+        // hide routine panel
+        $('#routine').hide();
+
+
+        $('#video1').on('fadeInComplete', function () {
+            //alert("I should play");
+            // setVideo(videoIndex);             
+
+            $(this).children('video').get(0).currentTime = 0;
+            $(this).children('video').get(0).play(0);
+        })
+
+
+
+        // add main vt buttons click events handlers
+        $('#vt-we-recommend-wrap').on('click', function () {
+
+            getVideoSet();
+
+            quitTraining = false;
+            console.log("we recommend - quitTraining:" + quitTraining);
+
+            $('#video1').hide();
+            $('#rest1').hide();
+            $('#end').hide();
+
+        });
+
+        // add main vt buttons click events handlers
+        $('#vt-your-favorite-wrap').on('click', function () {
+
+            getVideoSet();
+
+            quitTraining = false;
+
+            $('#video1').hide();
+            $('#rest1').hide();
+            $('#end').hide();
+
+        });
+
+        // add main vt buttons click events handlers
+        $('#vt-better-breathing-wrap').on('click', function () {
+
+            getVideoSet();
+
+            quitTraining = false;
+
+            $('#video1').hide();
+            $('#rest1').hide();
+            $('#end').hide();
+
+
+        });
+
+        // add main vt buttons click events handlers
+        $('#vt-better-strength-wrap').on('click', function () {
+
+            getVideoSet();
+
+            quitTraining = false;
+
+            $('#video1').hide();
+            $('#rest1').hide();
+            $('#end').hide();
+
+        });
+
+
+
+        // ratings click/tap ui events handlers
+        $('.enjoy-rating > span').on('click', function () {
+            //alert('Zing!');
+            var selected = {
+                color: 'orange'
+            };
+            var not_selected = {
+                color: 'dimgray'
+            };
+
+            enjoy_count = 0;
+            enjoy_count = $(this).data('star-count');
+
+
+            $(this).prevAll().css(selected);
+            $(this).css(selected);
+            $(this).nextAll().css(not_selected);
+
+
+
+        });
+
+        $('.difficulty-rating > span').on('click', function () {
+            //alert('Zing!');
+            var selected = {
+                color: '#59506F'
+            };
+            var not_selected = {
+                color: 'dimgray'
+            };
+
+            dificulty_count = 0;
+            dificulty_count = $(this).data('star-count');
+
+            $(this).prevAll().css(selected);
+            $(this).css(selected);
+            $(this).nextAll().css(not_selected);
+
+
+        });
+
+        $('.difficulty-rutine-rating > span').on('click', function () {
+            //alert('Zing!');
+            var selected = {
+                color: '#59506F'
+            };
+            var not_selected = {
+                color: 'black'
+            };
+
+            $(this).prevAll().css(selected).html(' ☗ ');
+            $(this).css(selected).html(' ☗ ');
+            $(this).nextAll().css(not_selected).html(' ☖ ');
+
+
+        });
+
+        $('.enjoy-rutine-rating > span').on('click', function () {
+            //alert('Zing!');
+            var selected = {
+                color: 'orange'
+            };
+            var not_selected = {
+                color: 'black'
+            };
+
+            $(this).prevAll().css(selected).html(' ★ ');
+            $(this).css(selected).html(' ★ ');
+            $(this).nextAll().css(not_selected).html(' ☆ ');
+
+
+        });
+
+        $('.close').on('click', function () {
+            // stop video play, if any
+            // stopVideo();
+
+            quitTraining = true;
+            console.log("close btn - quitTraining:" + quitTraining);
+
+            // pause all videos
+            $('#routine').find('#gwd-video_1').get(0).pause();
 
             // hide routine panel
             $('#routine').hide();
 
+        });
 
-            $('#video1').on('fadeInComplete', function () {
-                //alert("I should play");
-                // setVideo(videoIndex);             
+        $('video').on('ended', function () {
+            // when the video ends, show the rest screen
+            $('#video1').children('video').get(0).pause();
+            $('#video1').hide();
 
-                $(this).children('video').get(0).currentTime = 0;
-                $(this).children('video').get(0).play(0);
-            })
+            $('#rest1').fadeIn();
 
+            if (videoIndex < 4 || videoIndex > videoSet.length - 4) {
+                // hide ratings
+                $('.enjoy-rating').hide();
+                $('.difficulty-rating').hide();
 
-
-            // add main vt buttons click events handlers
-            $('#vt-we-recommend-wrap').on('click', function () {
-
-                getVideoSet();
-
-                quitTraining = false;
-                console.log("we recommend - quitTraining:" + quitTraining);
-
-                $('#video1').hide();
-                $('#rest1').hide();
-                $('#end').hide();
-
-            });
-
-            // add main vt buttons click events handlers
-            $('#vt-your-favorite-wrap').on('click', function () {
-
-                getVideoSet();
-
-                quitTraining = false;
-
-                $('#video1').hide();
-                $('#rest1').hide();
-                $('#end').hide();
-
-            });
-
-            // add main vt buttons click events handlers
-            $('#vt-better-breathing-wrap').on('click', function () {
-
-                getVideoSet();
-
-                quitTraining = false;
-
-                $('#video1').hide();
-                $('#rest1').hide();
-                $('#end').hide();
-
-
-            });
-
-            // add main vt buttons click events handlers
-            $('#vt-better-strength-wrap').on('click', function () {
-
-                getVideoSet();
-
-                quitTraining = false;
-
-                $('#video1').hide();
-                $('#rest1').hide();
-                $('#end').hide();
-
-            });
+            } else {
+                //show ratings
+                $('.enjoy-rating').show();
+                $('.difficulty-rating').show();
+            }
+            // startTimer('#timer1', Math.abs(videoSet[videoIndex-1].setCount) * Math.abs(videoSet[videoIndex-1].repetitionCount) * 10);
+            startTimer('#timer1', 20);
+        });
 
 
 
-            // ratings click/tap ui events handlers
-            $('.enjoy-rating > span').on('click', function () {
-                //alert('Zing!');
-                var selected = {
-                    color: 'orange'
-                };
-                var not_selected = {
-                    color: 'dimgray'
-                };
+        /* $('video').bind('loadeddata', function () {
+             alert('Loaded video');
+             setTimeout(function () {
+                     $('#video1').fadeIn(function () {
+                         $(this).trigger("fadeInComplete");
+                     });
+                 }, 100);
+             }, false);
+             */
 
-                enjoy_count = 0;
-                enjoy_count = $(this).data('star-count');
+        var video = document.getElementById('gwd-video_1');
+        video.addEventListener('loadeddata', function () {
+            // Video is loaded and can be played
+            // alert('Loaded video');
+            setTimeout(function () {
+                $('#video1').fadeIn(function () {
+                    $(this).trigger("fadeInComplete");
+                });
+            }, 100);
+        }, false);
 
+        $('#play-pause-btn').click(function () {
+            var currentVideo = document.getElementById('gwd-video_1');
+            if (currentVideo.paused || currentVideo.ended) {
+                $(this).html('<img src="pause.png" style="width: 100%; height: 100%">'); // add propper icons for play and pause.
 
-                $(this).prevAll().css(selected);
-                $(this).css(selected);
-                $(this).nextAll().css(not_selected);
+                currentVideo.play();
+            } else {
+                $(this).html('<img src="play.png" style="width: 100%; height: 100%">');
 
+                currentVideo.pause();
+            }
+        });
 
-
-            });
-
-            $('.difficulty-rating > span').on('click', function () {
-                //alert('Zing!');
-                var selected = {
-                    color: '#59506F'
-                };
-                var not_selected = {
-                    color: 'dimgray'
-                };
-
-                dificulty_count = 0;
-                dificulty_count = $(this).data('star-count');
-
-                $(this).prevAll().css(selected);
-                $(this).css(selected);
-                $(this).nextAll().css(not_selected);
-
-
-            });
-
-            $('.difficulty-rutine-rating > span').on('click', function () {
-                //alert('Zing!');
-                var selected = {
-                    color: '#59506F'
-                };
-                var not_selected = {
-                    color: 'black'
-                };
-
-                $(this).prevAll().css(selected).html(' ☗ ');
-                $(this).css(selected).html(' ☗ ');
-                $(this).nextAll().css(not_selected).html(' ☖ ');
-
-
-            });
-
-            $('.enjoy-rutine-rating > span').on('click', function () {
-                //alert('Zing!');
-                var selected = {
-                    color: 'orange'
-                };
-                var not_selected = {
-                    color: 'black'
-                };
-
-                $(this).prevAll().css(selected).html(' ★ ');
-                $(this).css(selected).html(' ★ ');
-                $(this).nextAll().css(not_selected).html(' ☆ ');
-
-
-            });
-
-            $('.close').on('click', function () {
-                // stop video play, if any
-                // stopVideo();
-
-                quitTraining = true;
-                console.log("close btn - quitTraining:" + quitTraining);
-
-                // pause all videos
-                $('#routine').find('#gwd-video_1').get(0).pause();
-
-                // hide routine panel
-                $('#routine').hide();
-
-            });
-
-            $('video').on('ended', function () {
-                // when the video ends, show the rest screen
-                $('#video1').children('video').get(0).pause();
-                $('#video1').hide();
-
-                $('#rest1').fadeIn();
-               
-                 if(videoIndex < 4 || videoIndex > videoSet.length - 4)
-                    {
-                        // hide ratings
-                        $('.enjoy-rating').hide();
-                        $('.difficulty-rating').hide();
-                        
-                    } else {
-                    //show ratings
-                         $('.enjoy-rating').show();
-                        $('.difficulty-rating').show();
-                } 
-                // startTimer('#timer1', Math.abs(videoSet[videoIndex-1].setCount) * Math.abs(videoSet[videoIndex-1].repetitionCount) * 10);
-                startTimer('#timer1', 20);
-            });
-
-            /* $('video').bind('loadeddata', function () {
-                 alert('Loaded video');
-                 setTimeout(function () {
-                         $('#video1').fadeIn(function () {
-                             $(this).trigger("fadeInComplete");
-                         });
-                     }, 100);
-                 }, false);
-                 */
-            var video = document.getElementById('gwd-video_1');
-            video.addEventListener('loadeddata', function () {
-                // Video is loaded and can be played
-                // alert('Loaded video');
-                setTimeout(function () {
-                    $('#video1').fadeIn(function () {
-                        $(this).trigger("fadeInComplete");
-                    });
-                }, 100);
-            }, false);
-
-
+        $('#volume-btn').change(function () {
+            newvolume = $('#volume-btn').val() / 100;
+            console.log(newvolume);
+            $('#gwd-video_1')[0].volume = newvolume;
+            //console.log($('#video').attr("volume"));
+        });
+       
 
         });
     </script>
