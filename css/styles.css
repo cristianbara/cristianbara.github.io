@@ -248,6 +248,9 @@ body .demo-blog {
 .demo-blog .favyourself .mdl-card__media {
   background-image: url('../images/fayourself-hero.jpg');
 }
+.demo-blog .myshoppinglist .mdl-card__media {
+  background-image: url('../images/myshoppinglist.jpg');
+}
 .demo-blog .myto-dos .mdl-card__media {
   background-image: url('../images/myto-dos.jpg');
 }
