@@ -245,6 +245,9 @@ body .demo-blog {
   background-image: url('../images/shopping.jpg');
 }
 
+.demo-blog .mytravellist .mdl-card__media {
+  background-image: url('../images/mytravellist.jpg');
+}
 .demo-blog .favyourself .mdl-card__media {
   background-image: url('../images/fayourself-hero.jpg');
 }
