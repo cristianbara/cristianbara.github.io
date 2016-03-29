@@ -723,6 +723,7 @@ $(document).ready(function () {
                     if (videoIndex < 5 || videoIndex > videoSet.length - 5) {
                         // hide ratings
                         wasRated = false;
+                        $('.rate-message').hide();
                         $('.enjoy-rating').hide();
                         $('.difficulty-rating').hide();
                         startTimer('#timer1', wasRated, 5);
@@ -731,6 +732,7 @@ $(document).ready(function () {
                     } else {
                         //show ratings
                         wasRated = true;
+                        $('.rate-message').show();
                         $('.enjoy-rating').show();
                         $('.difficulty-rating').show();
                         startTimer('#timer1', wasRated, 20);
