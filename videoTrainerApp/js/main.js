@@ -68,17 +68,22 @@ var wasDifficultyRating = false;
 var interimTimerObj;
 var interimTimerPaused = false;
 
+// speech synthesys lib
+var readAlowed = new Speak();
+
 function InterimTimer(callback, delay) {
     var timerId, start, remaining = delay;
 
-    this.pause = function() {
+    this.pause = function () {
         window.clearTimeout(timerId);
         remaining -= new Date() - start;
     };
 
-    this.resume = function() {
+    this.resume = function () {
         start = new Date();
-        if (timerId) {window.clearTimeout(timerId);}
+        if (timerId) {
+            window.clearTimeout(timerId);
+        }
         timerId = window.setTimeout(callback, remaining);
     };
 
@@ -292,7 +297,7 @@ function setVideo(index, length) {
         //reset flags for rating
         wasDifficultyRating = false;
         wasEnjoymentRating = false;
-        
+
         //reset the intermTimerobj
         interimTimerObj = null;
     };
@@ -337,7 +342,7 @@ function clearRatings() {
 $(document).ready(function () {
     /*setTimeout(function() {
         $('#splashscreen').hide();
-    }, 1500);*/
+    }, 1500);*/    
 
     // hide routine panel
     $('#routine').hide();
@@ -680,7 +685,7 @@ $(document).ready(function () {
     var repetitionTimer = setInterval(function () {
         if (isRepeating) {
             if ($('#video-description-timer').html() > 0) {
-                if(interimTimerPaused == false) {
+                if (interimTimerPaused == false) {
                     $('#video-description-timer').html($('#video-description-timer').html() - 1);
                 }
             }
@@ -700,47 +705,53 @@ $(document).ready(function () {
                 $('#gwd-video_1').removeClass('gwd-video-18oz-full').addClass('gwd-video-18oz-small');
                 $('#video-description').show();
                 $('#video-description-timer').show();
+                try {
+                    readAlowed.speakWithDelay($('#video-description-title').html(), 'nl-NL', 3000);
+                } catch (err) {
+                    console.log("error in speech synth");
+                    console.log(err);
+                }
 
                 // wait until animation ends, then replay the video.
                 setTimeout(function () {
                     $('#video1').children('video').get(0).currentTime = '0';
                     $('#video1').children('video').get(0).play();
-                }, 1000);              
+                }, 1000);
 
             };
-            
+
             // render the rest screen after prescribed time
-                interimTimerObj = new InterimTimer(function () {
-                    // stop the video
-                    $('#video1').children('video').get(0).pause();
+            interimTimerObj = new InterimTimer(function () {
+                // stop the video
+                $('#video1').children('video').get(0).pause();
 
-                    // show the rest screen
-                    /**/
-                    $('#video1').hide();
+                // show the rest screen
+                /**/
+                $('#video1').hide();
 
-                    $('#rest1').fadeIn();
+                $('#rest1').fadeIn();
 
-                    if (videoIndex < 5 || videoIndex > videoSet.length - 5) {
-                        // hide ratings
-                        wasRated = false;
-                        $('.rate-message').hide();
-                        $('.enjoy-rating').hide();
-                        $('.difficulty-rating').hide();
-                        startTimer('#timer1', wasRated, 5);
+                if (videoIndex < 5 || videoIndex > videoSet.length - 5) {
+                    // hide ratings
+                    wasRated = false;
+                    $('.rate-message').hide();
+                    $('.enjoy-rating').hide();
+                    $('.difficulty-rating').hide();
+                    startTimer('#timer1', wasRated, 5);
 
-                        console.log("---- should NOT be rating because videoIndex = " + videoIndex);
-                    } else {
-                        //show ratings
-                        wasRated = true;
-                        $('.rate-message').show();
-                        $('.enjoy-rating').show();
-                        $('.difficulty-rating').show();
-                        startTimer('#timer1', wasRated, 20);
+                    console.log("---- should NOT be rating because videoIndex = " + videoIndex);
+                } else {
+                    //show ratings
+                    wasRated = true;
+                    $('.rate-message').show();
+                    $('.enjoy-rating').show();
+                    $('.difficulty-rating').show();
+                    startTimer('#timer1', wasRated, 20);
 
-                        console.log("---- SHOULD be rating because videoIndex = " + videoIndex);
-                    }
+                    console.log("---- SHOULD be rating because videoIndex = " + videoIndex);
+                }
 
-                }, Math.abs(videoSet[videoIndex - 1].defaultRequiredTime) * 1000 + 2000);
+            }, Math.abs(videoSet[videoIndex - 1].defaultRequiredTime) * 1000 + 2000);
 
 
         } else {
@@ -781,7 +792,7 @@ $(document).ready(function () {
         var currentVideo = document.getElementById('gwd-video_1');
         if (currentVideo.paused || currentVideo.ended) {
             currentVideo.play();
-            if(interimTimerObj) {
+            if (interimTimerObj) {
                 interimTimerObj.resume();
                 interimTimerPaused = false;
             }
@@ -794,7 +805,7 @@ $(document).ready(function () {
             // do nothing
         } else {
             currentVideo.pause();
-            if(interimTimerObj) {
+            if (interimTimerObj) {
                 interimTimerObj.pause();
                 interimTimerPaused = true;
             }
@@ -849,5 +860,10 @@ $(document).ready(function () {
     } else {
         $('#register-button').trigger('click');
     }
+    
+    // init speeck synthesys    
+    readAlowed.init();
+    readAlowed.speak('Welkom! Laten we bewegen!', 'nl-NL');
+    readAlowed.speakWithDelay('Als u er klaar voor bent, druk op START!', 'nl-NL', 2000);
 
 });
