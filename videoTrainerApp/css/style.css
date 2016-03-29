@@ -202,6 +202,12 @@
      -o-transition: 1.7s ease-in-out;
      transition: 1.7s ease-in-out;     
      
+     -webkit-transition-delay: 0s;
+     -moz-transition-delay: 0s;
+     -o-transition-delay: 0s;
+     transition-delay: 0s;
+     
+     
      object-fit: fill;
      width: 100%;
      height: 102%;
