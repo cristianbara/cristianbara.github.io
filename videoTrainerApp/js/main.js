@@ -738,7 +738,7 @@ $(document).ready(function () {
                         console.log("---- SHOULD be rating because videoIndex = " + videoIndex);
                     }
 
-                }, Math.abs(videoSet[videoIndex - 1].defaultRequiredTime) * 1000 + 1000);
+                }, Math.abs(videoSet[videoIndex - 1].defaultRequiredTime) * 1000 + 2000);
 
 
         } else {

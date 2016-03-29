@@ -26,7 +26,7 @@ var ui = {
     'nl': {
         header: {
             h1: "VIDEO GYMNASTIEK",
-            h2: "Welkom! Laten we verhuizen!",
+            h2: "Welkom! Laten we bewegen!",
             we_recommend: "Wij raden",
             your_favorite: "Je favoriet",
             better_breathing: "Betere ademhaling",
