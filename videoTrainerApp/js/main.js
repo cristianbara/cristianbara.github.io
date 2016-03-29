@@ -306,9 +306,9 @@ function setVideo(index, length) {
     dificulty_count = -1;
 
     // -- remove this before deploy --
-    if (videoIndex == 1) {
+    /*if (videoIndex == 1) {
         videoIndex = 5
-    }
+    }*/
     // ----
 
     videoIndex++;
