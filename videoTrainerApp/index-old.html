@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<!-- comment this for eWALL -->
+<html>
+
+<head data-gwd-animation-mode="proMode">
+    <meta name="GCD" content="YTk3ODQ3ZWZhN2I4NzZmMzBkNTEwYjJl779d54ebbc5e63e6c4b9471ccc141622" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="87x87" href="icon.jpg">
+    <meta charset="utf-8">
+    <title>video trainer</title>
+    <meta name="generator" content="Google Web Designer 1.4.1.0901">
+    <!---->
+    <!-- TV window wrapper 
+<style>
+    .gwd-img-o7sj {
+        position: absolute;
+    }
+    
+    .gwd-img-mmom {
+        top: 0px;
+    }
+    
+    .gwd-img-j7j3 {
+        width: 1920px;
+        height: 1080px;
+        left: 40px;
+    }
+    
+    .gwd-div-wqb4 {
+        position: absolute;
+        width: 1015px;
+        height: 623px;
+        left: 371px;
+        top: 252px;
+        background-image: none;
+        background-color: rgb(0, 0, 0);
+        /*
+        border-top-left-radius: 90px;
+        border-top-right-radius: 90px;
+        border-bottom-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        */
+    }
+</style>
+<img src="assets/6-big-TV-v5.png" class="gwd-img-o7sj gwd-img-mmom gwd-img-j7j3" id="layer-8-tv">
+<div class="gwd-div-wqb4" id="tv-fillers">
+-->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Passion+One" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <div id="app" class="app-stretch">
+        <div class="gwd-div-3eb5" id="header" style="">
+            <div class="gwd-div-rdsn" id="h1" style="">VIDEO GYMNASTICS</div>
+            <div class="gwd-div-d8ml" id="h2">Welcome Bob! Let's get moving!</div>
+            <div id="register-button" style="display: none;">
+                <img src="assets/add_user.png" style="height: 90%; margin: 5%;">
+            </div>
+            <div id="register-form" class="register-form-hide">
+                <div id="register-form-label"> user name: </div>
+                <div id="textfield" contenteditable="true"></div>
+                <div id="record-btn">OK</div>
+            </div>
+        </div>
+        <div class="gwd-div-19nn" id="body">
+
+            <!--
+            <img src="../PhysicalTrainer/assets/fitbit-charge.png" class="gwd-img-1fxm">
+            <img src="../PhysicalTrainer/assets/chair1.png" class="gwd-img-n9jz">
+            -->
+            <!-- -->
+            <img src="assets/fitbit-charge.png" class="gwd-img-1fxm">
+            <img src="assets/chair1.png" class="gwd-img-n9jz">
+            <!-- -->
+            <div class="gwd-div-bpt5" id="sensor-instruction">Make sure you wear the FitBit bracelet.</div>
+            <div class="gwd-div-1qd5" id="chair-instruction">You might need a chair for some exercises. Have one near by.</div>
+            <div class="gwd-div-1tit" id="ready-text">When you are ready press</div>
+            <div class="gwd-div-zqkx" id="start-routine">START</div>
+
+            <!-- Uncomment, once the reasoner can provide the 3 categories of routines -->
+            <!--
+                <div class="gwd-imagebutton-1e5o" id="vt-we-recommend-wrap">
+                    <img id="vt-we-recommend" class="gwd-div-d5ad" src="../PhysicalTrainer/assets/1.jpg">
+                    <div id="we-recommend" class="gwd-div-17np" style="">We Recommend</div>
+                </div>
+
+                <div class="gwd-imagebutton-rlx2" id="vt-your-favorite-wrap">
+                    <img id="vt-your-favorite" src="../PhysicalTrainer/assets/2.jpg" class="gwd-div-d5ad">
+                    <div id="your-favorite" class="gwd-div-17np" style="">Your Favorite</div>
+                </div>
+
+                <div class="gwd-imagebutton-1mkg" id="vt-better-breathing-wrap">
+                    <img id="vt-better-breathing" src="../PhysicalTrainer/assets/3.jpg" class="gwd-div-d5ad">
+                    <div id="better-breathing" class="gwd-div-17np" style="">Better Breathing</div>
+                </div>
+
+                <div class="gwd-imagebutton-j5wk" id="vt-better-strength-wrap">
+                    <img id="vt-better-strength" src="../PhysicalTrainer/assets/4.jpg" class="gwd-div-d5ad">
+                    <div id="better_strength" class="gwd-div-17np" style="">Better Strength</div>
+                </div>
+              -->
+
+        </div>
+        <div class="gwd-div-e0dw" id="footer"></div>
+
+        <div class="gwd-div-7tg3" id="routine" style="">
+            <!-- <img src="preloader.gif" class="gwd-img-htup" id="preloader"> -->
+
+            <!-- video:1 -->
+            <div class="gwd-div-suk4" id="video1">
+                <!-- Description panel -->
+                <div id="video-description" class="gwd-div-1qit">
+                    <div class="gwd-div-hlg4" id="video-description-title">REPEAT AS INSTRUCTED IN THE VIDEO</div>
+                    <div class="gwd-div-1295" id="video-description-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet sollicitudin dui non lacinia. Integer pulvinar, libero sed pulvinar lobortis, lectus ligula posuere lectus, vel tempor orci nisi sit amet velit. Vivamus purus ligula, molestie vitae pellentesque at, bibendum in ante. Pellentesque elementum porta faucibus. Curabitur lacinia sollicitudin fermentum. Vestibulum ultricies augue ac ipsum tincidunt euismod. Curabitur egestas tristique justo non auctor. Maecenas in tempus ante. In hac habitasse platea dictumst. Ut at velit non elit pulvinar iaculis.</div>
+                </div>
+                <div id="video-description-timer" class="video-description-timer-position">12s</div>
+
+                <!-- Videop layer -->
+                <video id="gwd-video_1" webkit-playsinline class="gwd-video-18oz gwd-video-18oz-full">
+                    <source id="video-source" type="video/mp4">
+                </video>
+                <!-- <div class="gwd-div-14ac" id="subtitles" style="">Standing up, turn your head to the right</div> -->
+
+                <!-- Video Controls -->
+                <div id="pause-btn" style="position: absolute; height: 60px; width: 60px; top: 120px; left: 93%; text-align: center; background: #FF5722; border-radius: 16px; box-shadow: inset 0 1px 4px hsla(0, 0%, 0%, .5), inset 0 0 10px hsla(0, 0%, 0%, .5), 0 0 0 1px hsla(0, 0%, 0%, .1), 0 -1px 2px 1px hsla(0, 0%, 0%, .25), 0 2px 2px 1px hsla(0, 0%, 100%, .5), 0 -2px 10px 2px hsla(0, 0%, 100%, .75), 0 2px 10px 2px hsla(0, 0%, 0%, .25);">
+                    <!-- <img src="../PhysicalTrainer/assets/pause-white.png" style="height: 100%; margin-left: 0%; margin-top: 3%;"> -->
+                    <img src="assets/pause-white.png" style="height: 100%;">
+                </div>
+                <div id="play-btn" style="position: absolute;/* border-radius: 50%; */height: 60px; width: 60px; top: 200px; left: 93%; text-align: center; border-radius: 16px; background: #03A9F4; box-shadow: inset 0 1px 4px hsla(0, 0%, 0%, .5), inset 0 0 10px hsla(0, 0%, 0%, .5), 0 0 0 1px hsla(0, 0%, 0%, .1), 0 -1px 2px 1px hsla(0, 0%, 0%, .25), 0 2px 2px 1px hsla(0, 0%, 100%, .5), 0 -2px 10px 2px hsla(0, 0%, 100%, .75), 0 2px 10px 2px hsla(0, 0%, 0%, .25);">
+                    <!-- <img src="../PhysicalTrainer/assets/play-white.png" style="height: 100%; margin-left: 0%; margin-top: 3%;"> -->
+                    <img src="assets/play-white.png" style="height: 100%;">
+                </div>
+                <input type="range" id="volume-btn" min="0" max="100" value="100" style="position: absolute; left: 87%; top: 380px; transform: rotate(-90deg); border: 2px solid lightgray; border-radius: 8px;">
+
+            </div>
+
+            <!-- rest:1 -->
+            <div class="gwd-div-suk4 rest" id="rest1">
+                <div class="gwd-rest-container">
+                    <div class="gwd-div-1w5r" style="">
+                        <span class="rest-time-title">Rest Time</span>
+                        <br> <span style="font-size: 120px;" id="timer1"></span>
+                    </div>
+                    <div class="gwd-div-6lr1 enjoy-rating" id="">
+                        <div class="enjoy-rating-title"> How much did you enjoy this exercise? </div>
+                        <span class="rating-btn" data-star-count="1.0"> <i class="material-icons">star_border</i> </span>
+                        <span class="rating-btn" data-star-count="2.0"> <i class="material-icons">star_border</i> </span>
+                        <span class="rating-btn" data-star-count="3.0"> <i class="material-icons">star_border</i> </span>
+                        <span class="rating-btn" data-star-count="4.0"> <i class="material-icons">star_border</i> </span>
+                        <span class="rating-btn" data-star-count="5.0"> <i class="material-icons">star_border</i> </span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="gwd-div-6lr1 difficulty-rating" id="">
+                        <div class="difficulty-rating-title"> How difficult was this exercise? </div>
+                        <span class="rating-btn" data-star-count="1.0"> <i class="material-icons">fitness_center</i> </span>
+                        <span class="rating-btn" data-star-count="2.0"> <i class="material-icons">fitness_center</i> </span>
+                        <span class="rating-btn" data-star-count="3.0"> <i class="material-icons">fitness_center</i> </span>
+                        <span class="rating-btn" data-star-count="4.0"> <i class="material-icons">fitness_center</i> </span>
+                        <span class="rating-btn" data-star-count="5.0"> <i class="material-icons">fitness_center</i> </span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- end:1 -->
+            <div class="gwd-div-suk4" id="end">
+                <div class="gwd-rest-container">
+                    <div class="gwd-div-1w5r" id="timer" style="">
+                        <span id="end-routine-title">End of Routine</span>
+                        <br>
+                        <span id="end-routine-quality" style="font-size: 120px; text-shadow: rgb(0, 0, 0) -1px -1px 0px, rgb(0, 0, 0) 1px -1px 0px, rgb(0, 0, 0) -1px 1px 0px, rgb(0, 0, 0) 1px 1px 0px;">Done</span>
+                        <span style="font-size: 120px; color: green;"> ♕ </span>
+                    </div>
+
+                    <div class="gwd-div-6lr1 satisfaction-rutine-rating" id="">
+                        <div class="satisfaction-rutine-rating-title"> How much did you enjoy this exercise? </div>
+                        <span class="rating-btn-small" data-star-count="1.0"> <i class="material-icons">tag_faces</i> </span>
+                        <span class="rating-btn-small" data-star-count="2.0"> <i class="material-icons">tag_faces</i> </span>
+                        <span class="rating-btn-small" data-star-count="3.0"> <i class="material-icons">tag_faces</i> </span>
+                        <span class="rating-btn-small" data-star-count="4.0"> <i class="material-icons">star_border</i> </span>
+                        <span class="rating-btn-small" data-star-count="5.0"> <i class="material-icons">tag_faces</i> </span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="gwd-div-6lr1 enjoy-rutine-rating" id="">
+                        <div class="enjoy-rutine-rating-title"> How much did you enjoy this exercise? </div>
+                        <span class="rating-btn-small" data-star-count="1.0"> <i class="material-icons">star_border</i> </span>
+                        <span class="rating-btn-small" data-star-count="2.0"> <i class="material-icons">star_border</i> </span>
+                        <span class="rating-btn-small" data-star-count="3.0"> <i class="material-icons">star_border</i> </span>
+                        <span class="rating-btn-small" data-star-count="4.0"> <i class="material-icons">star_border</i> </span>
+                        <span class="rating-btn-small" data-star-count="5.0"> <i class="material-icons">star_border</i> </span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="gwd-div-6lr1 difficulty-rutine-rating" id="">
+                        <div class="difficulty-rutine-rating-title"> How difficult was this exercise? </div>
+                        <span class="rating-btn-small" data-star-count="1.0"> <i class="material-icons">fitness_center</i> </span>
+                        <span class="rating-btn-small" data-star-count="2.0"> <i class="material-icons">fitness_center</i> </span>
+                        <span class="rating-btn-small" data-star-count="3.0"> <i class="material-icons">fitness_center</i> </span>
+                        <span class="rating-btn-small" data-star-count="4.0"> <i class="material-icons">fitness_center</i> </span>
+                        <span class="rating-btn-small" data-star-count="5.0"> <i class="material-icons">fitness_center</i> </span>
+                    </div>
+
+                    <div class="gwd-div-1gbj close" style="left:50%; margin-left:-60px; top: 90%;" id="prev-7">Klaar</div>
+
+                </div>
+            </div>
+
+            <div class="gwd-div-1u47 close" id="close">Quit</div>
+
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <!-- 
+    <script src="../PhysicalTrainer/js/translation.js"></script>
+
+    <script src="../../../../PhysicalTrainer/src/main/webapp/js/translation.js" </script>
+    -->
+
+    <!--  -->
+    <script src="js/translation.js">
+    </script>
+
+    <script>
+        /*
+                var videoSetNL = [
+                    {
+                        videoURL: "http://ewall.rrdweb.nl/videos/nl/video2.mp4",
+                        setCount: 1,
+                        repetitionCount: 2
+                            },
+                    {
+                        videoURL: "http://ewall.rrdweb.nl/videos/nl/video2.mp4",
+                        setCount: 1,
+                        repetitionCount: 2
+                            },
+                    {
+                        videoURL: "http://ewall.rrdweb.nl/videos/nl/video12.mp4",
+                        setCount: 1,
+                        repetitionCount: 3
+                            },
+                    {
+                        videoURL: "http://ewall.rrdweb.nl/videos/nl/video2.mp4",
+                        setCount: 1,
+                        repetitionCount: 2
+                            }
+                        ];
+                var videoSetDE = [
+                    {
+                        videoURL: "http://ewall.rrdweb.nl/videos/de/video2.mp4",
+                        setCount: 1,
+                        repetitionCount: 2
+                            },
+                    {
+                        videoURL: "http://ewall.rrdweb.nl/videos/de/video2.mp4",
+                        setCount: 1,
+                        repetitionCount: 2
+                            },
+                    {
+                        videoURL: "http://ewall.rrdweb.nl/videos/de/video12.mp4",
+                        setCount: 1,
+                        repetitionCount: 3
+                            },
+                    {
+                        videoURL: "http://ewall.rrdweb.nl/videos/de/video2.mp4",
+                        setCount: 1,
+                        repetitionCount: 2
+                            }
+                        ];
+                 */
+        var videoSet = [];
+        var videoIndex = -1;
+        var quitTraining;
+        var isRepeating = false;
+        var userVolume = 1;
+        //var timer;
+        var thisSessionID = "";
+        var enjoy_count = -1;
+        var dificulty_count = -1;
+        var enjoyment_rutine_count = -1;
+        var dificulty_rutine_count = -1;
+        var satisfaction_rutine_count = -1;
+        // var ewallUserID = ewallApp.currentSession.user.username;
+        var showRegistrationForm = false;
+        var isUserRegistered = false;
+        var ewallUserID = 'bob';
+
+
+        function generateUUID() {
+            var d = new Date().getTime();
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = (d + Math.random() * 16) % 16 | 0;
+                d = Math.floor(d / 16);
+                return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+            return uuid;
+        };
+
+        function startTimer(elementId, time) {
+            var currentTimeCount = time;
+            $(elementId).html(currentTimeCount + " s");
+            try {
+                clearInterval(timer);
+            } catch (err) {
+                console.log("timer object not found");
+            };
+            timer = setInterval(function () {
+                currentTimeCount--;
+                $(elementId).html(currentTimeCount + " s");
+                console.log("timer - quitTraining:" + quitTraining);
+
+                if (quitTraining == false) {
+                    if (currentTimeCount == 0) {
+
+                        // save rastings to reasoner.
+                        // send enjoyment feedback to PARS
+                        $.ajax({
+                            url: 'https://myhealthframe.nl/ParsWebService/services/pars',
+                            data: JSON.stringify({
+                                jsonrpc: '2.0',
+                                method: 'saveRating',
+                                params: [thisSessionID, ewallUserID, videoSet[videoIndex - 1].exerciseId, 2, parseFloat(enjoy_count), "ewallproject"],
+                                id: "jsonrpc"
+                            }), // id is needed !!
+                            type: "POST",
+                            dataType: "json",
+                            success: function () {
+                                // do nothing
+                            },
+                            error: function (err) {
+                                alert("ERROR: The system is not functioning. Please try again later.");
+                            }
+
+                        });
+
+                        // send dificulty feedback to PARS
+                        $.ajax({
+                            url: 'https://myhealthframe.nl/ParsWebService/services/pars',
+                            data: JSON.stringify({
+                                jsonrpc: '2.0',
+                                method: 'saveRating',
+                                params: [thisSessionID, ewallUserID, videoSet[videoIndex - 1].exerciseId, 1, parseFloat(dificulty_count), "ewallproject"],
+                                id: "jsonrpc"
+                            }), // id is needed !!
+                            type: "POST",
+                            dataType: "json",
+                            success: function () {
+                                // do nothing
+                            },
+                            error: function (err) {
+                                alert("ERROR: The system is not functioning. Please try again later.");
+                            }
+
+                        });
+
+                        // show next video [todo]
+                        setVideo(videoIndex, videoSet.length);
+
+                        console.log('videoIndex: ' + videoIndex);
+                        // set source for the first video, only after a successful ajax response
+                        setTimeout(function () {
+
+                            clearRatings();
+
+                        }, 100);
+
+                        clearInterval(timer);
+
+                    }
+                } else {
+                    clearInterval(timer);
+                }
+            }, 1000);
+        };
+
+        function getVideoSet() {
+            thisSessionID = generateUUID();
+
+            $.ajax({
+                url: 'https://myhealthframe.nl/ParsWebService/services/pars',
+                data: JSON.stringify({
+                    jsonrpc: '2.0',
+                    method: 'getRecommendedExercises',
+                    params: [thisSessionID, ewallUserID, 'ewallproject'],
+                    id: "jsonrpc"
+                }), // id is needed !!
+                type: "POST",
+                dataType: "json",
+                success: function (data) {
+                    // get the new rutine
+                    videoSet = data.result;
+                    console.log(videoSet);
+                    // point to correct video set base on prefered language
+                    var itServerURL = 'https://s3.eu-central-1.amazonaws.com/ewall-videos/it/nr';
+                    var nlServerURL = 'https://s3.eu-central-1.amazonaws.com/ewall-videos/nl/nr';
+                    var deServerURL = 'https://s3.eu-central-1.amazonaws.com/ewall-videos/de/nr';
+                    var daServerURL = 'https://s3.eu-central-1.amazonaws.com/ewall-videos/da/nr';
+
+                    var langPref = ewallApp.preferedLanguage;
+                    for (i = 0; i < videoSet.length; i++) {
+                        switch (langPref) {
+                        case 'it': // replace videoUL from each item with the itServerURL
+                            videoSet[i].videoURL = itServerURL + videoSet[i].videoURL.split("videos/video")[1];
+
+                            break;
+                        case 'nl': // replace videoUL from each item with the nlServerURL
+                            videoSet[i].videoURL = nlServerURL + videoSet[i].videoURL.split("videos/video")[1];
+
+                            break;
+                        case 'de': // replace videoUL from each item with the deServerURL
+                            videoSet[i].videoURL = deServerURL + videoSet[i].videoURL.split("videos/video")[1];
+
+                            break;
+                        case 'da': // replace videoUL from each item with the daServerURL
+                            videoSet[i].videoURL = daServerURL + videoSet[i].videoURL.split("videos/video")[1];
+
+                            break;
+                        default: // replace videoUL from each item with the nlServerURL
+                            videoSet[i].videoURL = deServerURL + videoSet[i].videoURL.split("videos/video")[1];
+
+                            break;
+                        }
+                    }
+                    // reset the video index
+                    videoIndex = 0;
+                    setVideo(videoIndex, videoSet.length);
+
+                    // start playout
+                    $('#routine').fadeIn();
+                    // set source for the first video, only after a successful ajax response
+                    setTimeout(function () {
+                        $('#video1').fadeIn(function () {
+                            $(this).trigger("fadeInComplete");
+                        });
+                    }, 100);
+                },
+                error: function (err) {
+                    alert("ERROR: The system is not functioning. Please try again later.");
+                }
+
+            });
+        };
+
+        function setVideo(index, length) {
+            if (index >= length - 1) {
+                $('#video1').hide();
+                $('#rest1').hide();
+                $('#end').fadeIn();
+            } else {
+                $('#gwd-video_1').removeClass('gwd-video-18oz-small').addClass('gwd-video-18oz-full');
+                $('#video-source').attr('src', videoSet[index].videoURL);
+                $('#video-description').hide();
+                $('#video-description-title').html(videoSet[index].prescribedInstructions);
+                var videoDescription;
+                videoDescription = videoSet[index].exerciseDesc.replace(/\\n/g, " ");
+                $('#video-description-content').html(videoDescription);
+                $('#gwd-video_1')[0].load();
+                isRepeating = false;
+                console.log('setting video: ' + videoSet[index].videoURL);
+                $('#rest1').hide();
+            };
+
+            enjoy_count = -1;
+            dificulty_count = -1;
+            videoIndex++;
+            // force video trainer into last state
+            // videoIndex = length - 1;
+        };
+
+        function clearRatings() {
+            var clear = {
+                color: '#a5a5a5'
+            };
+            // clear video ratings
+            $('.enjoy-rating > span').css(clear);
+            $('.enjoy-rating > span').html('<i class="material-icons">star_border</i>');
+
+            $('.difficulty-rating > span').css(clear);
+            $('.difficulty-rating > span').html(' <i class="material-icons">fitness_center</i> ');
+
+            // clear routine ratigns 
+            $('.enjoy-rutine-rating > span').css(clear);
+            $('.enjoy-rutine-rating > span').html('<i class="material-icons">star_border</i>');
+
+            $('.difficulty-rutine-rating > span').css(clear);
+            $('.difficulty-rutine-rating > span').html(' <i class="material-icons">fitness_center</i> ');
+
+            $('.satisfaction-rutine-rating > span').css(clear);
+            $('.satisfaction-rutine-rating > span').html(' <i class="material-icons">tag_faces</i> ');
+
+        }
+
+        $(document).ready(function () {
+            /*setTimeout(function() {
+                $('#splashscreen').hide();
+            }, 1500);*/
+
+            // hide routine panel
+            $('#routine').hide();
+
+
+            $('#video1').on('fadeInComplete', function () {
+                //alert("I should play");
+                // setVideo(videoIndex);             
+
+                $(this).children('video').get(0).currentTime = 0;
+                $(this).children('video').get(0).play(0);
+            })
+
+            // add main vt buttons click events handlers
+            $('#start-routine').on('click', function () {
+
+                getVideoSet();
+
+                $('#play-btn').click();
+
+                quitTraining = false;
+                console.log("start routine (recommended videos) - quitTraining:" + quitTraining);
+
+                $('#video1').hide();
+                $('#rest1').hide();
+                $('#end').hide();
+
+            });
+            /*
+            // uncomment this once the video recommender can suport categories of rutines
+            // add main vt buttons click events handlers
+            $('#vt-we-recommend-wrap').on('click', function () {
+
+                getVideoSet();
+
+                quitTraining = false;
+                console.log("we recommend - quitTraining:" + quitTraining);
+
+                $('#video1').hide();
+                $('#rest1').hide();
+                $('#end').hide();
+
+            });
+
+            // add main vt buttons click events handlers
+            $('#vt-your-favorite-wrap').on('click', function () {
+
+                getVideoSet();
+
+                quitTraining = false;
+
+                $('#video1').hide();
+                $('#rest1').hide();
+                $('#end').hide();
+
+            });
+
+            // add main vt buttons click events handlers
+            $('#vt-better-breathing-wrap').on('click', function () {
+
+                getVideoSet();
+
+                quitTraining = false;
+
+                $('#video1').hide();
+                $('#rest1').hide();
+                $('#end').hide();
+
+
+            });
+
+            // add main vt buttons click events handlers
+            $('#vt-better-strength-wrap').on('click', function () {
+
+                getVideoSet();
+
+                quitTraining = false;
+
+                $('#video1').hide();
+                $('#rest1').hide();
+                $('#end').hide();
+
+            });
+            */
+
+
+            // ratings click/tap ui events handlers
+            $('.enjoy-rating > span').on('click', function () {
+                //alert('Zing!');
+                var selected = {
+                    color: 'orange'
+                };
+                var not_selected = {
+                    color: '#a5a5a5'
+                };
+
+                enjoy_count = 0;
+                enjoy_count = $(this).data('star-count');
+
+
+                $(this).prevAll('span').css(selected).html('<i class="material-icons">star</i>');
+                $(this).css(selected).html('<i class="material-icons">star</i>');
+                $(this).nextAll('span').css(not_selected).html('<i class="material-icons">star_border</i>');
+
+
+
+            });
+
+            $('.difficulty-rating > span').on('click', function () {
+
+                var selected = {
+                    color: '#510088'
+                };
+                var not_selected = {
+                    color: '#a5a5a5'
+                };
+
+                dificulty_count = 0;
+                dificulty_count = $(this).data('star-count');
+
+                $(this).prevAll('span').css(selected).html('<i class="material-icons">fitness_center</i>');
+                $(this).css(selected).html('<i class="material-icons">fitness_center</i>');
+                $(this).nextAll('span').css(not_selected).html('<i class="material-icons">fitness_center</i>');
+
+            });
+
+            $('.satisfaction-rutine-rating > span').on('click', function () {
+
+                var selected = {
+                    color: '#1b6beb'
+                };
+                var not_selected = {
+                    color: '#a5a5a5'
+                };
+
+                satisfaction_rutine_count = 0;
+                satisfaction_rutine_count = $(this).data('star-count');
+
+                $(this).prevAll('span').css(selected).html('<i class="material-icons">tag_faces</i>');
+                $(this).css(selected).html('<i class="material-icons">tag_faces</i>');
+                $(this).nextAll('span').css(not_selected).html('<i class="material-icons">tag_faces</i>');
+
+
+            });
+
+            $('.difficulty-rutine-rating > span').on('click', function () {
+
+                var selected = {
+                    color: '#510088'
+                };
+                var not_selected = {
+                    color: '#a5a5a5'
+                };
+
+                dificulty_rutine_count = 0;
+                dificulty_rutine_count = $(this).data('star-count');
+
+                $(this).prevAll('span').css(selected).html('<i class="material-icons">fitness_center</i>');
+                $(this).css(selected).html('<i class="material-icons">fitness_center</i>');
+                $(this).nextAll('span').css(not_selected).html('<i class="material-icons">fitness_center</i>');
+
+
+            });
+
+            $('.enjoy-rutine-rating > span').on('click', function () {
+
+                var selected = {
+                    color: 'orange'
+                };
+                var not_selected = {
+                    color: '#a5a5a5'
+                };
+
+                enjoy_rutine_count = 0;
+                enjoy_rutine_count = $(this).data('star-count');
+
+                $(this).prevAll('span').css(selected).html('<i class="material-icons">star</i>');
+                $(this).css(selected).html('<i class="material-icons">star</i>');
+                $(this).nextAll('span').css(not_selected).html('<i class="material-icons">star_border</i>');
+
+
+            });
+
+            $('.close').on('click', function () {
+                // stop video play, if any
+                // stopVideo();
+
+                quitTraining = true;
+                console.log("close btn - quitTraining:" + quitTraining);
+
+                // pause all videos
+                $('#routine').find('#gwd-video_1').get(0).pause();
+
+                // hide routine panel
+                $('#routine').hide();
+
+                // send satisfaction rutine ratings
+                try {
+
+                    $.ajax({
+                        url: 'https://myhealthframe.nl/ParsWebService/services/pars',
+                        data: JSON.stringify({
+                            jsonrpc: '2.0',
+                            method: 'saveSessionRate',
+                            params: [thisSessionID, ewallUserID, parseFloat(satisfaction_rutine_count), "ewallproject"],
+                            id: "jsonrpc"
+                        }), // id is needed !!
+                        type: "POST",
+                        dataType: "json",
+                        success: function () {
+                            // do nothing
+                        },
+                        error: function (err) {
+                            alert("ERROR: The system is not functioning. Please try again later.");
+                        }
+
+                    });
+
+                } catch (err) {
+                    console.log('Error sending satisfaction count.');
+                    console.log(err);
+                };
+
+                // send enjoyment routine ratings                
+                try {
+                    $.ajax({
+                        url: 'https://myhealthframe.nl/ParsWebService/services/pars',
+                        data: JSON.stringify({
+                            jsonrpc: '2.0',
+                            method: 'saveRating',
+                            params: [thisSessionID, ewallUserID, thisSessionID, 2, parseFloat(enjoy_rutine_count), "ewallproject"],
+                            id: "jsonrpc"
+                        }), // id is needed !!
+                        type: "POST",
+                        dataType: "json",
+                        success: function () {
+                            // do nothing
+                        },
+                        error: function (err) {
+                            alert("ERROR: The system is not functioning. Please try again later.");
+                        }
+
+                    });
+
+                } catch (err) {
+                    console.log('Error sending enjoyment count.');
+                    console.log(err);
+                };
+
+                // send difficulty routine ratings                
+                try {
+
+                    $.ajax({
+                        url: 'https://myhealthframe.nl/ParsWebService/services/pars',
+                        data: JSON.stringify({
+                            jsonrpc: '2.0',
+                            method: 'saveRating',
+                            params: [thisSessionID, ewallUserID, thisSessionID, 1, parseFloat(dificulty_rutine_count), "ewallproject"],
+                            id: "jsonrpc"
+                        }), // id is needed !!
+                        type: "POST",
+                        dataType: "json",
+                        success: function () {
+                            // do nothing
+                        },
+                        error: function (err) {
+                            alert("ERROR: The system is not functioning. Please try again later.");
+                        }
+
+                    });
+
+                } catch (err) {
+                    console.log('Error sending difficulty count.');
+                    console.log(err);
+                };
+
+
+            });
+
+            $('video').on('play', function () {
+                if (isRepeating) {
+                    // mute video during repetition screens
+                    $('#video1').children('video').get(0).volume = 0;
+                    $('#volume-btn').val(0);
+                } else {
+                    // resume to lst user set volume when vieweing the video in full screen
+                    $('#video1').children('video').get(0).volume = userVolume;
+                    $('#volume-btn').val(userVolume * 100);
+                }
+            });
+
+            // define repetition timer
+            var repetitionTimer = setInterval(function () {
+                if (isRepeating) {
+                    if ($('#video-description-timer').html() > 0) {
+                        $('#video-description-timer').html($('#video-description-timer').html() - 1);
+                    }
+                }
+            }, 1000);
+
+            $('video').on('ended', function () {
+                // when the video ends, show the rest screen
+                $('#video1').children('video').get(0).pause();
+                // before starting the repetition, set the counter value
+                if (isRepeating == false) {
+                    $('#video-description-timer').html(videoSet[videoIndex - 1].defaultRequiredTime);
+
+                    if (videoSet[videoIndex - 1].defaultRequiredTime > 0) {
+                        // render the description screen
+                        isRepeating = true;
+                        $('#gwd-video_1').removeClass('gwd-video-18oz-full').addClass('gwd-video-18oz-small');
+                        $('#video-description').show();
+                        $('#video-description-timer').show();
+
+                        // wait until animation ends, then replay the video.
+                        setTimeout(function () {
+                            $('#video1').children('video').get(0).currentTime = '0';
+                            $('#video1').children('video').get(0).play();
+                        }, 1000);
+
+                    };
+
+                    setTimeout(function () {
+                        // stop the video
+                        $('#video1').children('video').get(0).pause();
+
+                        // show the rest screen
+                        /**/
+                        $('#video1').hide();
+
+                        $('#rest1').fadeIn();
+
+                        if (videoIndex < 5 || videoIndex > videoSet.length - 5) {
+                            // hide ratings
+                            $('.enjoy-rating').hide();
+                            $('.difficulty-rating').hide();
+                            startTimer('#timer1', 5);
+
+                        } else {
+                            //show ratings
+                            $('.enjoy-rating').show();
+                            $('.difficulty-rating').show();
+                            startTimer('#timer1', 20);
+                        }
+
+
+                    }, Math.abs(videoSet[videoIndex - 1].defaultRequiredTime) * 1000 + 1000);
+                } else {
+                    // the video is small and repeating the second, third ... n-th time
+                    $('#video1').children('video').get(0).currentTime = '0';
+                    $('#video1').children('video').get(0).play();
+                };
+                // startTimer('#timer1', Math.abs(videoSet[videoIndex-1].setCount) * Math.abs(videoSet[videoIndex-1].repetitionCount) * 10);
+
+            });
+
+
+            var video = document.getElementById('gwd-video_1');
+            video.addEventListener('loadeddata', function () {
+                // Video is loaded and can be played
+                // alert('Loaded video');
+                setTimeout(function () {
+                    $('#video1').fadeIn(function () {
+                        $(this).trigger("fadeInComplete");
+                    });
+                }, 100);
+            }, false);
+
+            /* Uncomment before deploy  */
+            $('#play-pause-btn').click(function () {
+                var currentVideo = document.getElementById('gwd-video_1');
+                if (currentVideo.paused || currentVideo.ended) {
+                    $(this).html('<img src="../PhysicalTrainer/assets/pause.png" style="height: 100%; margin-left: 0%;">'); // add propper icons for play and pause.
+
+                    currentVideo.play();
+                } else {
+                    $(this).html('<img src="../PhysicalTrainer/assets/play.png" style="height: 100%; margin-left: 0%;">');
+
+                    currentVideo.pause();
+                }
+            });
+            $('#play-btn').click(function () {
+                var currentVideo = document.getElementById('gwd-video_1');
+                if (currentVideo.paused || currentVideo.ended) {
+                    currentVideo.play();
+                }
+            });
+            $('#pause-btn').click(function () {
+                var currentVideo = document.getElementById('gwd-video_1');
+                if (currentVideo.paused || currentVideo.ended) {
+
+                } else {
+
+                    currentVideo.pause();
+                }
+            });
+
+            /* Use for localhost only. Comment before deploy */
+            /*              
+                $('#play-pause-btn').click(function () {
+                    var currentVideo = document.getElementById('gwd-video_1');
+                    if (currentVideo.paused || currentVideo.ended) {
+                        $(this).html('<img src="../../../../PhysicalTrainer/src/main/webapp/assets/pause.png" style="width: 70%; height: 70%; margin-left: 0%; margin-top: 11%;">'); // add propper icons for play and pause.
+
+                        currentVideo.play();
+                    } else {
+                        $(this).html('<img src="../../../../PhysicalTrainer/src/main/webapp/assets/play.png" style="width: 70%; height: 70%; margin-left: 0%; margin-top: 11%;">');
+
+                        currentVideo.pause();
+                    }
+                });
+*/
+            $('#volume-btn').change(function () {
+                newvolume = $('#volume-btn').val() / 100;
+                if (newvolume > 0) {
+                    userVolume = newvolume;
+                };
+                console.log("newVolume = " + newvolume);
+                $('#gwd-video_1')[0].volume = newvolume;
+                //console.log($('#video').attr("volume"));
+            });
+
+            $('#register-button').click(function () { //show the registration form
+                $('#register-form').removeClass('register-form-hide').addClass('register-form-show');
+            });
+
+            $('#record-btn').click(function () { // records the username and hides the registration form
+                console.log("before setting the username in local storage: " + localStorage.getItem("userName"));
+                //to do - record user name in local storage, set isUserRegistered to true                
+                localStorage.setItem("userName", $('#textfield').html());
+
+                console.log("after setting the username in local storage: " + localStorage.getItem("userName"));
+
+                //hide the panel
+                $('#register-form').removeClass('register-form-show').addClass('register-form-hide');
+            });
+
+            /* set the user to the localstorage */
+            if (localStorage.getItem('userName') !== null) {
+                ewallUserID = localStorage.getItem('userName');
+                console.log('starting video session for user: ' + ewallUserID);
+            } else {
+                $('#register-button').trigger('click');
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
