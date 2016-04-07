@@ -731,7 +731,7 @@ $(document).ready(function () {
 
                 $('#rest1').fadeIn();
 
-                if (videoIndex < 5 || videoIndex > videoSet.length - 5) {
+                if (videoIndex < 5 || videoIndex >= videoSet.length - 5) {
                     // hide ratings
                     wasRated = false;
                     $('.rate-message').hide();
