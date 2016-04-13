@@ -555,6 +555,8 @@ $(document).ready(function () {
 
         // hide routine panel
         $('#routine').hide();
+        
+         $('#start-routine').show();
 
         // send satisfaction rutine ratings
         try {
