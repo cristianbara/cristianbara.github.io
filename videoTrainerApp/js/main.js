@@ -357,6 +357,8 @@ $(document).ready(function () {
 
     // add main vt buttons click events handlers
     $('#start-routine').on('click', function () {
+        
+        $(this).hide();
 
         getVideoSet();
 
